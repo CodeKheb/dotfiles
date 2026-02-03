@@ -34,17 +34,25 @@ Plug 'tpope/vim-commentary'
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :action ActivateProjectToolWindow<CR>
 nnoremap <Esc> :action HideActiveWindow<CR><Esc>
-nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>f :action FindInPath<CR>
+
+
 nnoremap <leader>z :action  GotoNextError<CR>
 nnoremap <leader>Z :action GotoPreviousError<CR>
+nnoremap <leader>d :action ShowErrorDescription<CR>
+
+
 nnoremap <leader>op :action OpenFile<CR>
 nnoremap <leader>on :action NewProject<CR>
 nnoremap <leader>nf :action NewElement<CR>
 nnoremap <leader>l :action NextTab<CR>
 nnoremap <leader>h :action PreviousTab<CR>
 
+nnoremap <leader><leader> :action Run<CR>
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
 
-"map <leader>d <Action>(Debug)
+"map <leader>d <Action>(Debug
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
