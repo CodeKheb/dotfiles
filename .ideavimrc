@@ -17,7 +17,15 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+
+
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+set number
+set relativenumber
+set hlsearch
+set showmatch
+set clipboard=unnamedplus
+set cursorline
 
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
@@ -25,15 +33,27 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 
+
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
 "" Map <leader>d to start debug
+
+nnoremap <leader>gc :action Vcs.Commit<CR>
+nnoremap <leader>gp :action Vcs.Push<CR>
+nnoremap <leader>gl :action Vcs.UpdateProject<CR>
+nnoremap <leader>gr :action Vcs.Revert<CR>
+nnoremap <leader>gh :action Vcs.ShowHistory<CR>
+
+
+nnoremap <leader>/ :action CommentByLineComment<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :action ActivateProjectToolWindow<CR>
 nnoremap <Esc> :action HideActiveWindow<CR><Esc>
 nnoremap <leader>f :action FindInPath<CR>
+nmap ff :action GotoFile<CR>
+
 
 
 nnoremap <leader>z :action  GotoNextError<CR>
@@ -47,12 +67,13 @@ nnoremap <leader>nf :action NewElement<CR>
 nnoremap <leader>l :action NextTab<CR>
 nnoremap <leader>h :action PreviousTab<CR>
 
+
+
 nnoremap <leader><leader> :action Run<CR>
 nnoremap <leader>vv :e ~/.ideavimrc<CR>
 nnoremap <leader>vr :source ~/.ideavimrc<CR>
 
 "map <leader>d <Action>(Debug
-
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
