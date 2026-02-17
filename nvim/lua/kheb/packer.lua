@@ -15,4 +15,16 @@ use {
 		vim.cmd("colorscheme rose-pine")
 	end
 }
+use {
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  build = ':TSUpdate'
+}
+use {
+	'theprimeagen/harpoon'
+}
+use {
+	'mbbill/undotree'
+}
+
   end)
