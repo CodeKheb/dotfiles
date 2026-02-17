@@ -1,6 +1,3 @@
-# Hyprland-configs
-Hyprland-configs in arch linux
-
 # Neovim configs
 Writing neovim from scratch
 
