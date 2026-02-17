@@ -5,10 +5,8 @@ Writing neovim from scratch
 ## Added
 
 
-``` lua
-packer.lua
-``` 
-Directory
+``` packer.lua ``` Directory 
+
 ### Rose Pine Theme
 ``` lua
 use {
@@ -19,6 +17,7 @@ use {
     end
     }
 ```
+
 ### Treesitter
 ``` lua 
 use {
@@ -27,6 +26,7 @@ use {
   build = ':TSUpdate'
 }
 ```
+
 ### Harpoon (theprimeagen)
 ``` lua
 use {
@@ -34,7 +34,7 @@ use {
     }
 ```
 ### Undo Tree
-`` lua 
+``` lua 
 use { 
     'mbbill/undotree
     }
