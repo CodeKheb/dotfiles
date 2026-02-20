@@ -68,6 +68,7 @@ nnoremap <leader>h :action PreviousTab<CR>
 
 
 nnoremap <leader><leader> :action Run<CR>
+nnoremap <leader>s :action Stop<CR>
 nnoremap <leader>vv :e ~/.ideavimrc<CR>
 nnoremap <leader>vr :source ~/.ideavimrc<CR>
 
