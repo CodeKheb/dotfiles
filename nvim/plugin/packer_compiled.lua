@@ -83,16 +83,36 @@ _G.packer_plugins = {
     path = "/home/me/.local/share/nvim/site/pack/packer/opt/compiler.nvim",
     url = "https://github.com/Zeioth/compiler.nvim"
   },
+  ["copy-cut-paste.vim"] = {
+    loaded = true,
+    path = "/home/me/.local/share/nvim/site/pack/packer/start/copy-cut-paste.vim",
+    url = "https://github.com/NLKNguyen/copy-cut-paste.vim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/me/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/me/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/me/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   neovim = {
     config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
     loaded = true,
     path = "/home/me/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/me/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -101,7 +121,7 @@ _G.packer_plugins = {
   },
   ["overseer.nvim"] = {
     commands = { "CompilerOpen", "CompilerStop", "CompilerToggleResults", "CompilerRedo" },
-    config = { "\27LJ\2\n™\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14task_list\1\0\1\14task_list\0\1\0\4\15max_height\3\25\14direction\vbottom\15min_height\3\25\19default_detail\3\1\nsetup\roverseer\frequire\0" },
+    config = { "\27LJ\2\n™\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14task_list\1\0\1\14task_list\0\1\0\4\15max_height\3\25\14direction\vbottom\19default_detail\3\1\15min_height\3\25\nsetup\roverseer\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -143,13 +163,6 @@ time([[Config for neovim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'CompilerRedo', function(cmdargs)
-          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, { cmd = 'CompilerRedo', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('CompilerRedo ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'CompilerStop', function(cmdargs)
           require('packer.load')({'overseer.nvim'}, { cmd = 'CompilerStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -170,6 +183,13 @@ pcall(vim.api.nvim_create_user_command, 'CompilerToggleResults', function(cmdarg
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CompilerToggleResults ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'CompilerRedo', function(cmdargs)
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, { cmd = 'CompilerRedo', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('CompilerRedo ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
