@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>qe", vim.cmd.Ex)
+
+vim.keymap.set("n", "<leader>q", ":wq<CR>")
 
 -- Open compiler
 vim.api.nvim_set_keymap('n', '<leader><leader>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
