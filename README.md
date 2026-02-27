@@ -39,6 +39,34 @@ use {
     'mbbill/undotree
     }
 ```
+### Copy Paste to Clipboard
+``` lua
+use 'NLKNguyen/copy-cut-paste.vim'
+```
+### Autocompletion cmp-nvim
+``` lua
+-- For packer.lua
+	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+
+-- For nvim-lspconfig.lua
+require'cmp'.setup {
+  sources = {
+    { name = 'nvim_lsp' }
+  }
+}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+vim.lsp.config('*', {
+	capabilities = capabilities,
+	root_markers = { '.git' },
+})
+```
+
 ### Neovim-lspconfig
 ``` lua
   use 'neovim/nvim-lspconfig'
