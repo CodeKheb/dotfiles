@@ -38,36 +38,38 @@ Plug 'tpope/vim-commentary'
 
 "" Map <leader>d to start debug
 
-nnoremap <leader>gc :action Vcs.Commit<CR>
+"" Git remaps
+nnoremap <leader>gc :action CheckinProject<CR>
 nnoremap <leader>gp :action Vcs.Push<CR>
 nnoremap <leader>gl :action Vcs.UpdateProject<CR>
-nnoremap <leader>gr :action Vcs.Revert<CR>
-nnoremap <leader>gh :action Vcs.ShowHistory<CR>
 
 
+"" QoF remaps
 nnoremap <leader>/ :action CommentByLineComment<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :action ActivateProjectToolWindow<CR>
 nnoremap <Esc> :action HideActiveWindow<CR><Esc>
-nnoremap <leader>f :action FindInPath<CR>
 nmap ff :action GotoFile<CR>
 
 
 
+"" Error Handling remaps
 nnoremap <leader>z :action  GotoNextError<CR>
 nnoremap <leader>Z :action GotoPreviousError<CR>
 nnoremap <leader>d :action ShowErrorDescription<CR>
+nnoremap <leader>f :action ShowIntentionActions<CR>
+nnoremap <leader>rf :action RenameElement<CR>
 
 
-nnoremap <leader>op :action OpenFile<CR>
-nnoremap <leader>on :action NewProject<CR>
+"" OpenFiles
+nnoremap <leader>op :action NewProject<CR>
 nnoremap <leader>nf :action NewElement<CR>
 nnoremap <leader>l :action NextTab<CR>
 nnoremap <leader>h :action PreviousTab<CR>
 
 
-
-nnoremap <leader><leader> :action Run<CR>
+"" Run Stop and ideavimrc remaps
+nnoremap <leader>r :action Run<CR>
 nnoremap <leader>s :action Stop<CR>
 nnoremap <leader>vv :e ~/.ideavimrc<CR>
 nnoremap <leader>vr :source ~/.ideavimrc<CR>
