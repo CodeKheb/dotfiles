@@ -18,12 +18,8 @@ vim.opt.clipboard = "unnamedplus"
 -- Undo SAVES
 vim.opt.undofile = true
 
--- TRAIL
-vim.opt.list = true
-vim.opt.listchars = {
-  trail = "·",
-}
 
 vim.opt.updatetime = 50
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
+

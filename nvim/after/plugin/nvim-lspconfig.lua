@@ -12,10 +12,5 @@ vim.lsp.config('*', {
 vim.lsp.enable('gopls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
+vim.lsp.enable('jdtls')
 
-vim.filetype.add({
-		extension = {
-			gowork = "gowork",
-			gotmpl = "gotmpl",
-		},
-})
