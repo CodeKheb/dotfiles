@@ -1,5 +1,5 @@
 require'nvim-treesitter'.setup({
-    ensure_installed = {'lua', 'go', 'java', 'python' },
+    ensure_installed = {'html', 'css', 'javascript', 'lua', 'go', 'java', 'python' },
     auto_install = false,
 
     highlight = {

@@ -14,3 +14,6 @@ vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedP' },
     end
 })
 
+
+vim.keymap.set("n", "<leader>`", "<cmd>LivePreview start<CR>")
+
