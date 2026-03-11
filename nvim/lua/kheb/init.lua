@@ -4,7 +4,7 @@ print("PLEASE WORK")
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.scrolloff = 12
+vim.opt.scrolloff = 8
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -18,6 +18,8 @@ vim.opt.clipboard = "unnamedplus"
 -- Undo SAVES
 vim.opt.undofile = true
 
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 
 vim.opt.updatetime = 50
 vim.opt.termguicolors = true

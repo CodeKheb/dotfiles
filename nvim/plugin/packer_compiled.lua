@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/home/me/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/me/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -113,20 +108,15 @@ _G.packer_plugins = {
     path = "/home/me/.local/share/nvim/site/pack/packer/start/copy-cut-paste.vim",
     url = "https://github.com/NLKNguyen/copy-cut-paste.vim"
   },
-  ["go.nvim"] = {
-    loaded = true,
-    path = "/home/me/.local/share/nvim/site/pack/packer/start/go.nvim",
-    url = "https://github.com/ray-x/go.nvim"
-  },
-  ["guihua.lua"] = {
-    loaded = true,
-    path = "/home/me/.local/share/nvim/site/pack/packer/start/guihua.lua",
-    url = "https://github.com/ray-x/guihua.lua"
-  },
   harpoon = {
     loaded = true,
     path = "/home/me/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["live-preview.nvim"] = {
+    loaded = true,
+    path = "/home/me/.local/share/nvim/site/pack/packer/start/live-preview.nvim",
+    url = "https://github.com/brianhuster/live-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -171,7 +161,7 @@ _G.packer_plugins = {
   },
   ["overseer.nvim"] = {
     commands = { "CompilerOpen", "CompilerStop", "CompilerToggleResults", "CompilerRedo" },
-    config = { "\27LJ\2\n™\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14task_list\1\0\1\14task_list\0\1\0\4\14direction\vbottom\15max_height\3\25\19default_detail\3\1\15min_height\3\25\nsetup\roverseer\frequire\0" },
+    config = { "\27LJ\2\n™\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14task_list\1\0\1\14task_list\0\1\0\4\15max_height\3\25\14direction\vbottom\19default_detail\3\1\15min_height\3\25\nsetup\roverseer\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -213,13 +203,6 @@ time([[Config for neovim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'CompilerStop', function(cmdargs)
-          require('packer.load')({'overseer.nvim'}, { cmd = 'CompilerStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'overseer.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('CompilerStop ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'CompilerOpen', function(cmdargs)
           require('packer.load')({'compiler.nvim', 'overseer.nvim'}, { cmd = 'CompilerOpen', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -240,6 +223,13 @@ pcall(vim.api.nvim_create_user_command, 'CompilerRedo', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CompilerRedo ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'CompilerStop', function(cmdargs)
+          require('packer.load')({'overseer.nvim'}, { cmd = 'CompilerStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'overseer.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('CompilerStop ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 

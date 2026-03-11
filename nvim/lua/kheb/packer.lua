@@ -9,7 +9,6 @@ return require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig.nvim'
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
-	use 'neovim/nvim-lspconfig'
 	use 'NLKNguyen/copy-cut-paste.vim'
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -17,14 +16,19 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
+    use "brianhuster/live-preview.nvim"
 
-  -- lua/plugins/rose-pine.lua
 use {
 	"rose-pine/neovim",
 	name = "rose-pine",
 	config = function()
 		vim.cmd("colorscheme rose-pine")
 	end
+}
+
+use {
+  "nvim-tree/nvim-tree.lua",
+  requires = { "nvim-tree/nvim-web-devicons" }
 }
 
 use {
@@ -66,6 +70,9 @@ use {
     })
   end,
 }
+
+
+ColorMyPencils()
 
   end)
 
