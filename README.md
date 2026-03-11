@@ -26,7 +26,17 @@ use {
   build = ':TSUpdate'
 }
 ```
-
+### Tree
+```lua
+use {
+  "nvim-tree/nvim-tree.lua",
+  requires = { "nvim-tree/nvim-web-devicons" }
+}
+```
+### Live Preview
+``` lua
+use "brianhuster/live-preview.nvim"
+```
 ### Harpoon (theprimeagen)
 ``` lua
 use {
@@ -103,6 +113,25 @@ Python
 ``` lua
 vim.lsp.enable('pyright')
 ```
+Bash
+``` lua
+vim.lsp.enable('bashls')
+```
+HTML
+``` lua
+vim.lsp.enable('html')
+```
+CSS
+``` lua
+vim.lsp.enable('cssls')
+```
+JavaScript / TypeScript
+``` lua
+vim.lsp.enable('ts_ls')
+```
+
+
+
 
 
 # Intellij Ideavimrc
