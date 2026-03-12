@@ -1,6 +1,7 @@
 require("kheb.remap")
 print("PLEASE WORK")
 
+vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -22,6 +23,5 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.updatetime = 50
-vim.opt.termguicolors = true
 vim.opt.cursorline = true
 
