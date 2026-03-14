@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/me/.cache/nvim/packer_hererocks/2.1.1767980792/share/lua/5.1/?.lua;/home/me/.cache/nvim/packer_hererocks/2.1.1767980792/share/lua/5.1/?/init.lua;/home/me/.cache/nvim/packer_hererocks/2.1.1767980792/lib/luarocks/rocks-5.1/?.lua;/home/me/.cache/nvim/packer_hererocks/2.1.1767980792/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/me/.cache/nvim/packer_hererocks/2.1.1767980792/lib/lua/5.1/?.so"
+local package_path_str = "/home/me/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?.lua;/home/me/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?/init.lua;/home/me/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?.lua;/home/me/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/me/.cache/nvim/packer_hererocks/2.1.1741730670/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -123,12 +123,6 @@ _G.packer_plugins = {
     path = "/home/me/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  neovim = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/me/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/me/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -156,7 +150,7 @@ _G.packer_plugins = {
   },
   ["overseer.nvim"] = {
     commands = { "CompilerOpen", "CompilerStop", "CompilerToggleResults", "CompilerRedo" },
-    config = { "\27LJ\2\n™\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14task_list\1\0\1\14task_list\0\1\0\4\15min_height\3\25\15max_height\3\25\14direction\vbottom\19default_detail\3\1\nsetup\roverseer\frequire\0" },
+    config = { "\27LJ\2\n™\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14task_list\1\0\1\14task_list\0\1\0\4\15max_height\3\25\15min_height\3\25\19default_detail\3\1\14direction\vbottom\nsetup\roverseer\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -172,6 +166,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/me/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/me/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -191,19 +190,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: neovim
-time([[Config for neovim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "neovim")
-time([[Config for neovim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'CompilerOpen', function(cmdargs)
-          require('packer.load')({'overseer.nvim', 'compiler.nvim'}, { cmd = 'CompilerOpen', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'CompilerToggleResults', function(cmdargs)
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, { cmd = 'CompilerToggleResults', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'overseer.nvim', 'compiler.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('CompilerOpen ', 'cmdline')
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('CompilerToggleResults ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'CompilerRedo', function(cmdargs)
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, { cmd = 'CompilerRedo', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('CompilerRedo ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'CompilerStop', function(cmdargs)
           require('packer.load')({'overseer.nvim'}, { cmd = 'CompilerStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -212,19 +214,12 @@ pcall(vim.api.nvim_create_user_command, 'CompilerStop', function(cmdargs)
           require('packer.load')({'overseer.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CompilerStop ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'CompilerToggleResults', function(cmdargs)
-          require('packer.load')({'overseer.nvim', 'compiler.nvim'}, { cmd = 'CompilerToggleResults', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'CompilerOpen', function(cmdargs)
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, { cmd = 'CompilerOpen', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'overseer.nvim', 'compiler.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('CompilerToggleResults ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'CompilerRedo', function(cmdargs)
-          require('packer.load')({'overseer.nvim', 'compiler.nvim'}, { cmd = 'CompilerRedo', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'overseer.nvim', 'compiler.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('CompilerRedo ', 'cmdline')
+          require('packer.load')({'compiler.nvim', 'overseer.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('CompilerOpen ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 

@@ -1,4 +1,5 @@
 require("kheb.remap")
+require("kheb.packer")
 print("PLEASE WORK")
 
 vim.opt.termguicolors = true
@@ -11,6 +12,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.signcolumn = "yes"
 
 -- YANK CLIPBOARD
 vim.opt.clipboard = "unnamedplus"

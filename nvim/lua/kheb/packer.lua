@@ -26,8 +26,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-treesitter/nvim-treesitter',
-        lazy = false,
-        build = ':TSUpdate'
+        run = ':TSUpdate',
     }
 
     use {
