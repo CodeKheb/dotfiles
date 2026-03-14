@@ -12,6 +12,9 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 
+vim.keymap.set('n', '<leader>Z', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', '<leader>z', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
         local buf = args.buf

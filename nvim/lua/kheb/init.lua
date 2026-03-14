@@ -1,3 +1,12 @@
+vim.filetype.add({
+  extension = {
+    templ = "templ",
+  },
+})
+
+require("kheb.remap")
+require("kheb.packer")
+-- rest of your config...
 require("kheb.remap")
 require("kheb.packer")
 print("PLEASE WORK")

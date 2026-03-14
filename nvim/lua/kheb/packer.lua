@@ -1,43 +1,43 @@
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git", "clone", "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-
-    use 'wbthomason/packer.nvim'
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use "brianhuster/live-preview.nvim"
-
-    use { "rose-pine/neovim", as = "rose-pine" }
-
-    use {
+require("lazy").setup({
+    "windwp/nvim-ts-autotag",
+    'windwp/nvim-autopairs',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'brianhuster/live-preview.nvim',
+    'theprimeagen/harpoon',
+    'mbbill/undotree',
+    'tpope/vim-fugitive',
+    { "rose-pine/neovim", name = "rose-pine" },
+    {
         "nvim-tree/nvim-tree.lua",
-        requires = { "nvim-tree/nvim-web-devicons" }
-    }
-
-    use {
+        dependencies = { "nvim-tree/nvim-web-devicons" }
+    },
+    {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-    }
-
-    use {
-        'theprimeagen/harpoon',
-        'mbbill/undotree',
-        'tpope/vim-fugitive'
-    }
-
-    use {
+        build = ':TSUpdate',
+    },
+    {
         "Zeioth/compiler.nvim",
-        requires = {
+        dependencies = {
             "stevearc/overseer.nvim",
             "nvim-telescope/telescope.nvim",
         },
@@ -45,9 +45,8 @@ return require('packer').startup(function(use)
         config = function()
             require("compiler").setup({})
         end,
-    }
-
-    use {
+    },
+    {
         "stevearc/overseer.nvim",
         commit = "6271cab7ccc4ca840faa93f54440ffae3a3918bd",
         cmd = { "CompilerOpen", "CompilerStop", "CompilerToggleResults", "CompilerRedo" },
@@ -61,6 +60,5 @@ return require('packer').startup(function(use)
                 },
             })
         end,
-    }
-
-end)
+    },
+})

@@ -1,5 +1,7 @@
 require("nvim-treesitter").install({ "templ", "html", "css", "javascript", "lua", "go", "java", "python" })
 
+require("nvim-ts-autotag").setup()
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
@@ -22,10 +24,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local cmp = require'cmp'
 cmp.setup {
-  sources = {
-    { name = 'nvim_lsp' }
-  },
-  mapping = {
+    sources = {
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'nvim_lsp' }
+    },
+    mapping = {
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
