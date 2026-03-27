@@ -6,9 +6,7 @@ vim.filetype.add({
 
 require("kheb.remap")
 require("kheb.packer")
--- rest of your config...
-require("kheb.remap")
-require("kheb.packer")
+
 print("PLEASE WORK")
 
 vim.opt.termguicolors = true
@@ -29,6 +27,10 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Undo SAVES
 vim.opt.undofile = true
+
+-- SWAP FILE NO !!
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true

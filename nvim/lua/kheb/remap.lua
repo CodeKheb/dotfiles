@@ -4,13 +4,16 @@ vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>so", vim.cmd.so)
 
+-- Buffers
+vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
+vim.keymap.set("n", "<leader>l", vim.cmd.BufferNext)
+vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
+
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
-
-vim.api.nvim_create_user_command("W", "w", {})
-vim.api.nvim_create_user_command("Q", "q", {})
 
 vim.keymap.set('n', '<leader>Z', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 vim.keymap.set('n', '<leader>z', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
@@ -30,3 +33,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('n', '<leader>f', vim.lsp.buf.format)
     end,
 })
+
+
