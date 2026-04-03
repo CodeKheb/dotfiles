@@ -1,15 +1,17 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>t", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>aq", vim.cmd.qa)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>so", vim.cmd.so)
 
 -- Buffers
 vim.keymap.set("n", "<leader>l", vim.cmd.BufferNext)
 vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
+vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 
 -- Open Terminal
 vim.keymap.set("n", "<leader>t", vim.cmd.terminal)
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
