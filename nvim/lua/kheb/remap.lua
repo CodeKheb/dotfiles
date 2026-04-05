@@ -1,8 +1,24 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>t", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>aq", vim.cmd.qa)
+vim.keymap.set("n", "<leader><Esc>", vim.cmd.qa)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>so", vim.cmd.so)
+
+-- Splits
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+vim.keymap.set("n", "<leader>sv", "<cmd>vsplit<CR>")
+vim.keymap.set("n", "<leader>sh", "<cmd>split<CR>")
+vim.keymap.set("n", "<leader>sq", "<cmd>close<CR>")
+
+vim.keymap.set("n", "<C-Up>",    "<cmd>resize +2<CR>")
+vim.keymap.set("n", "<C-Down>",  "<cmd>resize -2<CR>")
+vim.keymap.set("n", "<C-Left>",  "<cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
+vim.keymap.set("n", "<leader>se", "<C-w>=")
 
 -- Buffers
 vim.keymap.set("n", "<leader>l", vim.cmd.BufferNext)
