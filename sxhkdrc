@@ -1,0 +1,306 @@
+# ------------------------------------
+# TERMINAL SHORTCUTS 
+# ------------------------------------
+
+super + v
+    neovim-projects
+
+
+# ------------------------------------
+# Window Management
+# ------------------------------------
+
+# RELOAD SXHKD
+super + Escape
+    pkill -USR1 -x sxhkd
+
+
+# Close focused window
+super + q
+    active=$(xdotool getactivewindow); xprop -id "$active" WM_CLASS | grep -qiv "xfdesktop" && xdotool windowclose "$active"
+
+# Toggle floating
+super + w
+    wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
+
+# Toggle fullscreen
+shift + F11
+    xdotool getactivewindow key --clearmodifiers F11
+
+# Logout menu
+ctrl + alt + Delete
+    xfce4-session-logout
+
+# ------------------------------------
+# Focus
+# ------------------------------------
+
+# Move active window to previous workspace
+super + h
+    sh -c 'current=$(wmctrl -d | awk "$2==\"*\" {print $1}"); \
+    target=$((current > 0 ? current - 1 : current)); \
+    wmctrl -r :ACTIVE: -t $target'
+
+# Move active window to next workspace
+super + l
+    sh -c 'current=$(wmctrl -d | awk "$2==\"*\" {print $1}"); \
+    total=$(wmctrl -d | wc -l); \
+    target=$((current < total - 1 ? current + 1 : current)); \
+    wmctrl -r :ACTIVE: -t $target'
+
+super + k
+    xdotool key alt-Tab
+
+super + j
+    xdotool key alt-shift-Tab
+
+# Cycle focus
+alt + Tab
+    xfce4-popup-whiskermenu || rofi -show window
+
+# ------------------------------------
+# Resize Active Window
+# ------------------------------------
+
+super + shift + k
+    xdotool getactivewindow windowsize --usehints $(xdotool getactivewindow getwindowgeometry --shell | grep WIDTH | cut -d= -f2) $(( $(xdotool getactivewindow getwindowgeometry --shell | grep HEIGHT | cut -d= -f2) - 30 ))
+
+super + shift + j
+    xdotool getactivewindow windowsize --usehints $(xdotool getactivewindow getwindowgeometry --shell | grep WIDTH | cut -d= -f2) $(( $(xdotool getactivewindow getwindowgeometry --shell | grep HEIGHT | cut -d= -f2) + 30 ))
+
+# ------------------------------------
+# Move Active Window
+# ------------------------------------
+
+super + shift + ctrl + Left
+    xdotool getactivewindow windowmove --relative -- -30 0
+
+super + shift + ctrl + Right
+    xdotool getactivewindow windowmove --relative -- 30 0
+
+super + shift + ctrl + Up
+    xdotool getactivewindow windowmove --relative -- 0 -30
+
+super + shift + ctrl + Down
+    xdotool getactivewindow windowmove --relative -- 0 30
+
+# ------------------------------------
+# Launchers
+# ------------------------------------
+
+# Terminal
+super + t
+    kitty
+
+# File explorer
+super + e
+    dolphin
+
+# Text editor
+super + c
+    code
+
+# Web browser
+super + b
+    brave --disable-gpu
+
+# System monitor
+ctrl + shift + Escape
+    xfce4-taskmanager
+
+# ------------------------------------
+# Rofi Menus
+# ------------------------------------
+
+# App launcher
+super + space
+    bash ~/rofi/files/scripts/launcher_t6
+
+# Window switcher
+super + Tab
+    pkill -x rofi || rofi -show window
+
+# File finder
+super + shift + e
+    pkill -x rofi || rofi -show filebrowser
+
+# Emoji picker
+super + comma
+    pkill -x rofi || rofimoji
+
+# Clipboard
+super + v
+    pkill -x rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# ------------------------------------
+# Hardware Controls - Audio
+# ------------------------------------
+
+# Mute output
+F10
+    pamixer -t
+
+XF86AudioMute
+    pamixer -t
+
+# Mute mic
+F4
+    pamixer --default-source -t
+
+# Volume down
+F2
+    pamixer -d 5
+
+# Volume up
+F3
+    pamixer -i 5
+
+XF86AudioLowerVolume
+    pamixer -d 5
+
+XF86AudioRaiseVolume
+    pamixer -i 5
+
+# ------------------------------------
+# Hardware Controls - Media
+# ------------------------------------
+
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioPause
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+
+XF86AudioPrev
+    playerctl previous
+
+# ------------------------------------
+# Hardware Controls - Brightness
+# ------------------------------------
+
+F6
+    brightnessctl set +5%
+
+F5
+    brightnessctl set 5%-
+
+XF86MonBrightnessUp
+    brightnessctl set +5%
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-
+
+# ------------------------------------
+# Workspaces (XFCE uses xfwm4 workspaces)
+# ------------------------------------
+
+# Switch to workspace 1-9
+super + 1
+    xfwm4 --workspace 1 2>/dev/null || wmctrl -s 0
+
+super + 2
+    wmctrl -s 1
+
+super + 3
+    wmctrl -s 2
+
+super + 4
+    wmctrl -s 3
+
+super + 5
+    wmctrl -s 4
+
+super + 6
+    wmctrl -s 5
+
+super + 7
+    wmctrl -s 6
+
+super + 8
+    wmctrl -s 7
+
+super + 9
+    wmctrl -s 8
+
+super + 0
+    wmctrl -s 9
+
+# Next/prev workspace
+super + ctrl + l
+    wmctrl -s $(( $(wmctrl -d | grep '\*' | cut -d' ' -f1) + 1 ))
+
+super + ctrl + h
+    wmctrl -s $(( $(wmctrl -d | grep '\*' | cut -d' ' -f1) - 1 ))
+
+# Move window to workspace 1-9
+super + shift + 1
+    wmctrl -r :ACTIVE: -t 0
+
+super + shift + 2
+    wmctrl -r :ACTIVE: -t 1
+
+super + shift + 3
+    wmctrl -r :ACTIVE: -t 2
+
+super + shift + 4
+    wmctrl -r :ACTIVE: -t 3
+
+super + shift + 5
+    wmctrl -r :ACTIVE: -t 4
+
+super + shift + 6
+    wmctrl -r :ACTIVE: -t 5
+
+super + shift + 7
+    wmctrl -r :ACTIVE: -t 6
+
+super + shift + 8
+    wmctrl -r :ACTIVE: -t 7
+
+super + shift + 9
+    wmctrl -r :ACTIVE: -t 8
+
+super + shift + 0
+    wmctrl -r :ACTIVE: -t 9
+
+# ------------------------------------
+# Screenshot
+# ------------------------------------
+
+# Snip screen
+super + p
+    xfce4-screenshooter -r
+
+# Full screenshot
+Print
+    flameshot full -c
+
+# Active window screenshot
+super + ctrl + Print
+    flameshot gui
+
+
+
+# ------------------------------------
+# SHUTDOWN 
+# ------------------------------------
+
+# Logout
+super + Delete
+    xfce4-session-logout
+
+# Suspend
+super + shift + Delete
+    systemctl suspend
+
+# Shutdown
+super + Escape + Delete
+    systemctl poweroff
+
+# Restart
+super + ctrl + Delete
+    systemctl reboot
+
