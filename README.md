@@ -3,7 +3,7 @@ Kheb's neovim configs
 
 ## Features
     - Rofi Custom Bash Script for quick launch
-    - Neovim **0.11+** for native nvim lsp support
+    - Neovim 0.11+ for native nvim lsp support
     - Lazy plugin manager
     - Keybinds for my own comfort
 
@@ -35,6 +35,16 @@ if [[ -n "$project" ]]; then
 fi
 
  ```
+## Ollama Local AI
+Local AI used: qwen2.5-coder:1.5b
+    - Local Offline AI Model
+    - Fast enough for basic questions
+    - Gen.nvim for easy access 
+``` lua 
+-- remap
+vim.keymap.set("n", "<leader>aa", vim.cmd.Gen)
+```
+
 
 
 
