@@ -48,7 +48,13 @@ vim.lsp.config('templ', {
   filetypes = { 'templ' },
 })
 
+vim.lsp.config('kotlin_language_server', {
+  cmd = { 'kotlin-language-server' },
+  filetypes = { 'kotlin' },
+  root_markers = { 'gradlew', 'build.gradle', 'build.gradle.kts', 'settings.gradle.kts' },
+})
 
+vim.lsp.enable('kotlin_language_server')
 vim.lsp.enable('tailwindcss')
 vim.lsp.enable('templ')
 vim.lsp.enable('html')

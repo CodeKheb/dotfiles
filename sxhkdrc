@@ -17,7 +17,7 @@ super + Escape
 
 # Close focused window
 super + q
-    active=$(xdotool getactivewindow); xprop -id "$active" WM_CLASS | grep -qiv "xfdesktop" && xdotool windowclose "$active"
+    active=$(xdotool getactivewindow); xprop -id "$active" WM_CLASS | grep -qiv "xfdesktop" && xdotool windowkill "$active"
 
 # Toggle floating
 super + w
@@ -26,11 +26,6 @@ super + w
 # Toggle fullscreen
 shift + F11
     xdotool getactivewindow key --clearmodifiers F11
-
-# Logout menu
-ctrl + alt + Delete
-    xfce4-session-logout
-
 # ------------------------------------
 # Focus
 # ------------------------------------
@@ -288,8 +283,8 @@ super + ctrl + Print
 # SHUTDOWN 
 # ------------------------------------
 
-# Logout
-super + Delete
+# Logout menu 
+ctrl + alt + Delete
     xfce4-session-logout
 
 # Suspend

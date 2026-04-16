@@ -26,6 +26,9 @@ require("lazy").setup({
     'theprimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',
+    'stevearc/dressing.nvim',
+    'nvim-tree/nvim-web-devicons',
+    "MunifTanjim/nui.nvim",
     { "rose-pine/neovim", name = "rose-pine" },
     {
         "nvim-tree/nvim-tree.lua",
@@ -75,4 +78,18 @@ require("lazy").setup({
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
 },
+
+{
+    "David-Kunz/gen.nvim",
+    opts = {
+        model = "qwen2.5-coder:1.5b",
+        host = "localhost",
+        port = "11434",
+        display_mode = "float",
+        show_prompt = true,
+        show_model = true,
+        no_auto_close = false,
+    },
+}
+
 })

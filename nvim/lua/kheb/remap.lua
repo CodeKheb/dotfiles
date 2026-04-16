@@ -28,6 +28,8 @@ vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 -- Open Terminal
 vim.keymap.set("n", "<leader>t", vim.cmd.terminal)
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+-- gen.nvim OLLAMA AI
+vim.keymap.set("n", "<leader>aa", vim.cmd.Gen)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
