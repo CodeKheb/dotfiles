@@ -267,7 +267,7 @@ super + shift + 0
 
 # Snip screen
 super + p
-    xfce4-screenshooter -r
+    peek
 
 # Full screenshot
 Print

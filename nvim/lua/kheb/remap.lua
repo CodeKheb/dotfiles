@@ -10,8 +10,8 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
-vim.keymap.set("n", "<leader>sv", "<cmd>vsplit<CR>")
-vim.keymap.set("n", "<leader>sh", "<cmd>split<CR>")
+vim.keymap.set("n", "<leader>sl", "<cmd>vsplit<CR>")
+vim.keymap.set("n", "<leader>sj", "<cmd>split<CR>")
 vim.keymap.set("n", "<leader>sq", "<cmd>close<CR>")
 
 vim.keymap.set("n", "<C-Up>",    "<cmd>resize +2<CR>")
