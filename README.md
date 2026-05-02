@@ -37,6 +37,7 @@ fi
  ```
 ## Ollama Local AI
 Local AI used: qwen2.5-coder:1.5b
+
     - Local Offline AI Model
     - Fast enough for basic questions
     - Gen.nvim for easy access 
@@ -44,7 +45,9 @@ Local AI used: qwen2.5-coder:1.5b
 -- remap
 vim.keymap.set("n", "<leader>aa", vim.cmd.Gen)
 ```
-
-
-
+## LuaSnip (Templates)
+Template load remap with Ctrl + V
+```
+~/projects/dotfiles/nvim/after/snippets/
+```
 
