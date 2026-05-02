@@ -90,6 +90,14 @@ require("lazy").setup({
         show_model = true,
         no_auto_close = false,
     },
+},
+
+{
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
 }
 
+
+
 })
+

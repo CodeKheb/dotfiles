@@ -54,3 +54,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('n', '<leader>f', vim.lsp.buf.format)
     end,
 })
+
+vim.keymap.set({"i","s"}, "<C-v>", function()
+  require("luasnip").expand_or_jump()
+end)
