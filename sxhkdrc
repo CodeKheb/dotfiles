@@ -17,7 +17,7 @@ super + Escape
 
 # Close focused window
 super + q
-    active=$(xdotool getactivewindow); xprop -id "$active" WM_CLASS | grep -qiv "xfdesktop" && xdotool windowkill "$active"
+    wmctrl -c :ACTIVE:
 
 # Toggle floating
 super + w

@@ -48,6 +48,13 @@ vim.lsp.config('templ', {
   filetypes = { 'templ' },
 })
 
+vim.lsp.config('clangd', {
+    cmd = { 'clangd' },
+    filetypes = { 'c', 'cpp' },
+})
+
+vim.lsp.enable('clangd')
+
 vim.lsp.config('kotlin_language_server', {
   cmd = { 'kotlin-language-server' },
   filetypes = { 'kotlin' },
