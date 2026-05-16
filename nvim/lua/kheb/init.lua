@@ -9,7 +9,7 @@ vim.filetype.add({
 })
 
 require("kheb.remap")
-require("kheb.packer")
+require("kheb.lazy")
 
 print("PLEASE WORK")
 
