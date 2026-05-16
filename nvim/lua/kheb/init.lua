@@ -10,6 +10,7 @@ vim.filetype.add({
 
 require("kheb.remap")
 require("kheb.lazy")
+vim.opt.makeprg = "gcc -g % -o %<"
 
 print("PLEASE WORK")
 

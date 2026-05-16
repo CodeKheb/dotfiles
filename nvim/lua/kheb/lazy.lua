@@ -95,115 +95,78 @@ require("lazy").setup({
 {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
-}
+},
 
+{
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "theHamsta/nvim-dap-virtual-text",
+            "jay-babu/mason-nvim-dap.nvim",
+            "williamboman/mason.nvim",
+            "nvim-neotest/nvim-nio",
+        },
+        config = function()
+            local dap = require("dap")
+            local dapui = require("dapui")
 
+            require("mason").setup()
 
+            require("mason-nvim-dap").setup({
+                ensure_installed = { "codelldb", "python" },
+                handlers = {},
+            })
 
+            dapui.setup()
+            require("nvim-dap-virtual-text").setup()
+
+            dap.listeners.before.attach.dapui_config = function() dapui.open() end
+            dap.listeners.before.launch.dapui_config = function() dapui.open() end
+            dap.listeners.before.event_terminated.dapui_config = function() dapui.close() end
+            dap.listeners.before.event_exited.dapui_config = function() dapui.close() end
+
+            vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticError" })
+            vim.fn.sign_define("DapStopped", { text = "▶", texthl = "DiagnosticWarn" })
+
+            dap.adapters.codelldb = {
+                type = "server",
+                port = "${port}",
+                executable = {
+                    command = vim.fn.exepath("codelldb"),
+                    args = { "--port", "${port}" },
+                },
+            }
+
+            dap.configurations.c = {
+                {
+                    name = "Launch file",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input("Executable: ", vim.fn.getcwd() .. "/", "file")
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = false,
+                    runInTerminal = true,
+                },
+            }
+
+            dap.configurations.cpp = dap.configurations.c
+            dap.configurations.rust = dap.configurations.c
+
+            vim.keymap.set("n", "<leader>dc", dap.continue)
+            vim.keymap.set("n", "<leader>dn", dap.step_over)
+            vim.keymap.set("n", "<leader>di", dap.step_into)
+            vim.keymap.set("n", "<leader>do", dap.step_out)
+            vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+            vim.keymap.set("n", "<leader>B", function()
+                dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+            end)
+            vim.keymap.set("n", "<leader>dr", dap.repl.open)
+            vim.keymap.set("n", "<leader>dl", dap.run_last)
+            vim.keymap.set("n", "<leader>du", dapui.toggle)
+            vim.keymap.set("n", "<leader>dq", dap.terminate)
+        end,
+    },
 })
 
-return {
-    "mfussenegger/nvim-dap",
-    dependencies = {
-        "rcarriga/nvim-dap-ui",
-        "theHamsta/nvim-dap-virtual-text",
-        "jay-babu/mason-nvim-dap.nvim",
-        "williamboman/mason.nvim",
-        "nvim-neotest/nvim-nio",
-    },
-
-    config = function()
-        local dap = require("dap")
-        local dapui = require("dapui")
-
-        require("mason").setup()
-
-        require("mason-nvim-dap").setup({
-            ensure_installed = {
-                "codelldb",
-                "python",
-            },
-	    handlers = {},
-        })
-
-        dapui.setup()
-        require("nvim-dap-virtual-text").setup()
-
-        -- UI auto open/close
-        dap.listeners.before.attach.dapui_config = function()
-            dapui.open()
-        end
-
-        dap.listeners.before.launch.dapui_config = function()
-            dapui.open()
-        end
-
-        dap.listeners.before.event_terminated.dapui_config = function()
-            dapui.close()
-        end
-
-        dap.listeners.before.event_exited.dapui_config = function()
-            dapui.close()
-        end
-
-        -- Debug signs
-        vim.fn.sign_define(
-            "DapBreakpoint",
-            { text = "●", texthl = "DiagnosticError" }
-        )
-
-        vim.fn.sign_define(
-            "DapStopped",
-            { text = "▶", texthl = "DiagnosticWarn" }
-        )
-
-        -- C / C++ / Rust
-        dap.adapters.codelldb = {
-            type = "server",
-            port = "${port}",
-            executable = {
-                command = vim.fn.exepath("codelldb"),
-                args = { "--port", "${port}" },
-            },
-        }
-
-        dap.configurations.c = {
-            {
-                name = "Launch file",
-                type = "codelldb",
-                request = "launch",
-
-                program = function()
-                    return vim.fn.input(
-                        "Executable: ",
-                        vim.fn.getcwd() .. "/",
-                        "file"
-                    )
-                end,
-
-                cwd = "${workspaceFolder}",
-                stopOnEntry = false,
-
-                runInTerminal = true,
-            },
-        }
-
-        dap.configurations.cpp = dap.configurations.c
-        dap.configurations.rust = dap.configurations.c
-
-        -- Keymaps
-        vim.keymap.set("n", "<leader>db", dap.continue)
-        vim.keymap.set("n", "<F10>", dap.step_over)
-        vim.keymap.set("n", "<F11>", dap.step_into)
-        vim.keymap.set("n", "<F12>", dap.step_out)
-
-        vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-        vim.keymap.set("n", "<leader>B", function()
-            dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-        end)
-
-        vim.keymap.set("n", "<leader>dr", dap.repl.open)
-        vim.keymap.set("n", "<leader>dl", dap.run_last)
-        vim.keymap.set("n", "<leader>du", dapui.toggle)
-    end,
-}
