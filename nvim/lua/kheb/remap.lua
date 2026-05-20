@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>t", vim.cmd.Ex)
 vim.keymap.set("n", "<leader><Esc>", vim.cmd.qa)
 vim.keymap.set("n", "<leader>fq", "<cmd>q!<CR>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
@@ -15,10 +14,10 @@ vim.keymap.set("n", "<leader>sl", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<leader>sj", "<cmd>split<CR>")
 vim.keymap.set("n", "<leader>sq", "<cmd>close<CR>")
 
-vim.keymap.set("n", "<C-Up>",    "<cmd>resize +2<CR>")
-vim.keymap.set("n", "<C-Down>",  "<cmd>resize -2<CR>")
-vim.keymap.set("n", "<C-Left>",  "<cmd>vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
+vim.keymap.set("n", "<A-k>",    "<cmd>resize +2<CR>")
+vim.keymap.set("n", "<A-j>",  "<cmd>resize -2<CR>")
+vim.keymap.set("n", "<A-l>",  "<cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<A-h>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<leader>se", "<C-w>=")
 
 -- Buffers
@@ -27,8 +26,9 @@ vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
 vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 
 -- Open Terminal
-vim.keymap.set("n", "<leader>t", vim.cmd.terminal)
+vim.keymap.set("n", "<leader>t", "<cmd>vertical botright term<CR>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+
 -- gen.nvim OLLAMA AI
 vim.keymap.set("n", "<leader>aa", vim.cmd.Gen)
 
