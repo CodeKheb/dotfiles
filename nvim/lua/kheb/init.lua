@@ -14,6 +14,8 @@ vim.opt.makeprg = "gcc -g % -o %<"
 
 print("PLEASE WORK")
 
+vim.opt.autochdir = true
+
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
