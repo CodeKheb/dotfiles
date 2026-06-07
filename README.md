@@ -24,17 +24,17 @@ Kheb's neovim configs
  ```Bash
 #!/bin/bash
 
-project=$(find ~/projects -maxdepth 1 -type d ! -path ~/projects | \
-        while read -r dir; do
-            echo "$(basename "$dir)"
-        done | \ 
-        rofi -dmenu -i -p "Kheb NVIM" -theme ~/projects/rofi/project-picker.rasi)
+project=$(
+    find "$HOME/projects" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' |
+    rofi -dmenu -i -p "Kheb NVIM" \
+         -theme "$HOME/projects/dotfiles/rofi/project-picker.rasi"
+)
 
 if [[ -n "$project" ]]; then
-    kitty --working-directory "~/projects/$project" bash -c "nvim .; exec zsh"
-fi
-
- ```
+    kitty --working-directory "$HOME/projects/$project" \
+        bash -c "nvim .; exec zsh"
+fi 
+```
 ## Ollama Local AI
 Local AI used: qwen2.5-coder:1.5b
 
