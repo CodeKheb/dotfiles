@@ -16,3 +16,5 @@ alias reload-zsh="source ~/.zshrc"
 
 # nvim
 alias vim="nvim ."
+
+fastfetch
