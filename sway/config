@@ -1,0 +1,34 @@
+exec_always export PATH=$HOME/bin:$PATH
+
+set $mod Mod4
+
+# launch
+bindsym $mod+v exec ~/projects/dotfiles/rofi/projects.sh
+bindsym $mod+Return exec kitty
+bindsym $mod+Space exec rofi -show drun -theme ~/projects/dotfiles/rofi/launchers/type-6/style-7.rasi
+bindsym $mod+b exec firefox
+
+bindsym $mod+q kill
+
+# tiling
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+
+# workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+
+# poweroff
+bindsym $mod+Shift+Delete exec systemctl reboot 
+bindsym $mod+Delete exec systemctl poweroff
+
+input * xkb_options caps:escape
