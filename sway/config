@@ -6,7 +6,11 @@ set $mod Mod4
 bindsym $mod+v exec ~/projects/dotfiles/rofi/projects.sh
 bindsym $mod+Return exec kitty
 bindsym $mod+Space exec rofi -show drun -theme ~/projects/dotfiles/rofi/launchers/type-6/style-7.rasi
+
+# web browser
 bindsym $mod+b exec firefox
+bindsym $mod+f exec firefox https://facebook.com
+
 
 bindsym $mod+q kill
 

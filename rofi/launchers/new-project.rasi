@@ -1,0 +1,65 @@
+/*****----- New Project Prompt -----*****/
+
+* {
+  font: "JetBrains Mono Nerd Font 12";
+
+  background:     #101010;
+  background-alt: #252525;
+  foreground:     #FFFFFF;
+  selected:       #505050;
+  }
+
+window {
+    transparency:       "real";
+    location:           center;
+    anchor:             center;
+
+```
+    width:              500px;
+
+    border-radius:      15px;
+    background-color:   @background;
+```
+
+}
+
+mainbox {
+    children: [ "inputbar" ];
+    padding: 25px;
+    background-color: transparent;
+}
+
+inputbar {
+    spacing:            15px;
+    padding:            18px;
+
+```
+    border-radius:      12px;
+
+    background-color:   @background-alt;
+    text-color:         @foreground;
+
+    children: [ "prompt", "entry" ];
+```
+
+}
+
+prompt {
+    enabled: true;
+    text-color: @foreground;
+    background-color: transparent;
+    str: "󰏖";
+}
+
+entry {
+    placeholder: "project-name";
+    placeholder-color: #808080;
+
+```
+    background-color: transparent;
+    text-color: @foreground;
+
+    cursor: text;
+```
+
+}
