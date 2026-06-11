@@ -1,5 +1,5 @@
-" IDEAVIMRC FOR INTELLIJ BUT I'M USING NEOVIM NOW SO THIS IS JUST FOR WHEN I
-" NEED TO USE INTELLIJ
+" Currently on neovim, this is only for when I need to use IntelliJ and I want
+" to use vim
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
