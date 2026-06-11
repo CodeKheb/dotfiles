@@ -11,6 +11,8 @@ bindsym $mod+Space exec rofi -show drun -theme ~/projects/dotfiles/rofi/launcher
 bindsym $mod+b exec firefox
 bindsym $mod+f exec firefox https://facebook.com
 
+# toggle waybar
+bindsym $mod+t exec sh -c 'pgrep -x waybar >/dev/null && pkill waybar || waybar &'
 
 bindsym $mod+q kill
 
@@ -26,6 +28,10 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 
 # workspace
+set $ws1 "main"
+set $ws2 "second"
+set $ws3 "third"
+set $ws4 "fourth"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
