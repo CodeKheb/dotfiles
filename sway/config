@@ -37,6 +37,9 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 
+# screenshot
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
 # poweroff
 bindsym $mod+Shift+Delete exec systemctl reboot 
 bindsym $mod+Delete exec systemctl poweroff

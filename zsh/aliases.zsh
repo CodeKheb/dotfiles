@@ -21,4 +21,3 @@ alias reload-zsh="source ~/.zshrc"
 alias vim="nvim ."
 
 fastfetch
-waybar &
