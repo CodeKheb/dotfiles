@@ -49,6 +49,18 @@ bindsym F3 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym F5 exec brightnessctl set 5%-
 bindsym F6 exec brightnessctl set 5%+
 
+# borders
+default_border pixel 1
+default_floating_border pixel 0
+
+# gaps
+gaps inner 0
+gaps outer 0
+
+# focus
+client.focused          #5f5f5f #111111 #ffffff #5f5f5f #5f5f5f
+client.unfocused        #1a1a1a #111111 #888888 #1a1a1a #1a1a1a
+
 # input rebinds
 input * xkb_options caps:escape
 input type:touchpad {
