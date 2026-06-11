@@ -1,6 +1,9 @@
 # projects script path
 export PATH="$HOME/projects/dotfiles/rofi:$PATH"
 
+# source esp-idf
+alias esp="source ~/esp-idf/export.sh"
+
 alias so="source"
 alias c="clear"
 
