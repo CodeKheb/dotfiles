@@ -1,4 +1,4 @@
-require("nvim-treesitter").install({ "templ", "html", "css", "javascript", "lua", "go", "java", "python" })
+require("nvim-treesitter").install({ "templ", "html", "css", "javascript", "lua", "go", "java", "python", "rust" })
 
 require("nvim-ts-autotag").setup()
 vim.filetype.add({

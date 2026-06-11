@@ -27,6 +27,8 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 
+bindsym $mod+Shift+t floating toggle
+
 # workspace
 set $ws1 "main"
 set $ws2 "second"
