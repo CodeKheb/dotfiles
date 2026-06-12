@@ -1,0 +1,7 @@
+[SddmGreeterTheme]
+Name=Minimal
+Description=Minimal black login screen
+Author=me
+Version=1.0
+MainScript=Main.qml
+Theme-Id=sddm-minimal
