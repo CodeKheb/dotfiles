@@ -1,3 +1,7 @@
+# dependencies
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
+exec systemctl --user start sway-session.target
 exec_always export PATH=$HOME/bin:$PATH
 
 set $mod Mod4
