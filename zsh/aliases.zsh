@@ -1,14 +1,6 @@
-# path
-export PATH="$HOME/projects/dotfiles/rofi:$PATH"
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export NDK_HOME=$HOME/Android/Sdk/ndk/30.0.14904198
-
-alias sdkmanager="/home/me/Android/Sdk/cmdline-tools/bin/sdkmanager"
-
-# source esp-idf
+# esp-idf
 alias esp="source ~/esp-idf/export.sh"
+alias sdkmanager="/home/me/Android/Sdk/cmdline-tools/bin/sdkmanager"
 
 alias so="source"
 alias c="clear"
@@ -30,4 +22,3 @@ alias vim="nvim ."
 alias java25="sudo archlinux-java set java-25-openjdk"
 alias java21="sudo archlinux-java set java-21-openjdk"
 
-fastfetch
