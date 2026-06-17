@@ -9,6 +9,7 @@ set $mod Mod4
 # launch
 bindsym $mod+v exec ~/projects/dotfiles/rofi/projects.sh
 bindsym $mod+Return exec kitty
+bindsym $mod+i exec kitty nmtui
 bindsym $mod+Space exec rofi -show drun -theme ~/projects/dotfiles/rofi/launchers/type-6/style-7.rasi
 
 # web browser
