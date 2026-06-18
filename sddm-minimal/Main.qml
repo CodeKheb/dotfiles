@@ -7,6 +7,8 @@ Rectangle {
     height: 1080
     color: "black"
 
+    cursorShape: Qt.BlankCursor
+
     TextField {
         id: password
 
