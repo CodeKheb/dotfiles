@@ -1,3 +1,4 @@
+#
 # esp-idf
 alias esp="source ~/esp-idf/export.sh"
 alias sdkmanager="/home/me/Android/Sdk/cmdline-tools/bin/sdkmanager"
@@ -22,3 +23,6 @@ alias vim="nvim ."
 alias java25="sudo archlinux-java set java-25-openjdk"
 alias java21="sudo archlinux-java set java-21-openjdk"
 
+
+# ESPresso
+alias espresso="/home/me/projects/ESPresso/app/ESPresso/src-tauri/target/debug/espresso"
