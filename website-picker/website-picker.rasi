@@ -1,0 +1,75 @@
+* {
+    font: "JetBrains Mono Nerd Font 12";
+
+    background: #101010;
+    background-alt: #252525;
+    foreground: #FFFFFF;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+
+    width: 500px;
+
+    border-radius: 15px;
+    background-color: @background;
+}
+
+mainbox {
+    padding: 25px;
+    spacing: 15px;
+    background-color: transparent;
+}
+
+inputbar {
+    padding: 18px;
+    spacing: 15px;
+
+    border-radius: 12px;
+
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+entry {
+    placeholder: "Open website...";
+    placeholder-color: #808080;
+
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+listview {
+    lines: 6;
+    columns: 1;
+
+    background-color: transparent;
+    spacing: 8px;
+
+    scrollbar: false;
+}
+
+element {
+    padding: 12px;
+    border-radius: 10px;
+
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: #3a3a3a;
+    text-color: @foreground;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
