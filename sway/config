@@ -84,3 +84,6 @@ input * xkb_options caps:escape
 input type:touchpad {
     natural_scroll enabled
 }
+
+# monitor
+output HDMI-A-2 enable
