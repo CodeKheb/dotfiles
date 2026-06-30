@@ -53,6 +53,11 @@ vim.lsp.config('clangd', {
     filetypes = { 'c', 'cpp' },
 })
 
+vim.lsp.config('yaml-language-server', {
+    cmd = { 'yaml-language-server', "--stdio" },
+    filetypes = { 'yaml' },
+})
+
 vim.lsp.enable('clangd')
 
 vim.lsp.config('kotlin_language_server', {
@@ -61,7 +66,18 @@ vim.lsp.config('kotlin_language_server', {
   root_markers = { 'gradlew', 'build.gradle', 'build.gradle.kts', 'settings.gradle.kts' },
 })
 
+vim.lsp.config('rust_analyzer', {
+    cmd = { 'rust-analyzer'},
+    filetypes = { 'rust' },
+    root_markers = { 'Cargo.toml', '.git'},
+})
+
+
+
+vim.lsp.enable('rust_analyzer')
+
 vim.lsp.enable('kotlin_language_server')
+vim.lsp.enable('yaml-language-server')
 vim.lsp.enable('tailwindcss')
 vim.lsp.enable('templ')
 vim.lsp.enable('html')
@@ -73,11 +89,4 @@ vim.lsp.enable('gopls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
 vim.lsp.enable('jdtls')
-
-vim.lsp.config('rust_analyzer', {
-    cmd = { 'rust-analyzer'},
-    filetypes = { 'rust' },
-    root_markers = { 'Cargo.toml', '.git'},
-})
-vim.lsp.enable('rust_analyzer')
 
