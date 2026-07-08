@@ -3,6 +3,8 @@
 alias esp="source ~/esp-idf/export.sh"
 alias sdkmanager="/home/me/Android/Sdk/cmdline-tools/bin/sdkmanager"
 
+alias cls="clear"
+
 alias so="source"
 alias c="clear"
 
@@ -22,6 +24,7 @@ alias vim="nvim ."
 # java 
 alias java25="sudo archlinux-java set java-25-openjdk"
 alias java21="sudo archlinux-java set java-21-openjdk"
+alias java17="sudo archlinux-java set java-17-openjdk"
 
 
 # ESPresso
