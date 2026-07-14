@@ -80,15 +80,39 @@ require("lazy").setup({
 },
 
 {
-    "David-Kunz/gen.nvim",
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    version = "*",
+    build = "make",
+
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "MeanderingProgrammer/render-markdown.nvim",
+    },
+
     opts = {
-        model = "qwen2.5-coder:1.5b",
-        host = "localhost",
-        port = "11434",
-        display_mode = "float",
-        show_prompt = true,
-        show_model = true,
-        no_auto_close = false,
+        provider = "openai",
+
+        providers = {
+            openai = {
+                endpoint = "https://openrouter.ai/api/v1",
+                api_key_name = "OPENAI_API_KEY",
+                model = "tencent/hy3:free",
+                use_response_api = false,
+
+                disable_tools = true,
+
+                extra_request_body = {
+                    max_completion_tokens = 2048,
+                },
+            },
+            ollama = {
+                endpoint = "http://127.0.0.1:11434",
+                model = "qwen2.5-coder:1.5b",
+            }
+        },
     },
 },
 

@@ -29,8 +29,10 @@ vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 vim.keymap.set("n", "<leader>t", "<cmd>vertical botright term<CR>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
--- gen.nvim OLLAMA AI
-vim.keymap.set("n", "<leader>aa", vim.cmd.Gen)
+-- Avante
+vim.keymap.set("n", "<leader>aa", "<cmd>AvanteChat<CR>")
+vim.keymap.set("n", "<leader>ss", "<cmd>AvanteSwitchProvider<CR>")
+vim.keymap.set("n", "<leader>aq", "<cmd>AvanteAsk<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
