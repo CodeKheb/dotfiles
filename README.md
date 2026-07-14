@@ -35,16 +35,8 @@ if [[ -n "$project" ]]; then
         bash -c "nvim .; exec zsh"
 fi 
 ```
-## Ollama Local AI
-Local AI used: qwen2.5-coder:1.5b
-
-    - Local Offline AI Model
-    - Fast enough for basic questions
-    - Gen.nvim for easy access 
-``` lua 
--- remap
-vim.keymap.set("n", "<leader>aa", vim.cmd.Gen)
-```
+## OpenRouter AI 
+    - Avante.nvim
 ## LuaSnip (Templates)
 Template load remap with Ctrl + V
 ```
