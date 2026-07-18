@@ -12,6 +12,7 @@ declare -A sites=(
     ["ChatGPT"]="https://chatgpt.com"
     ["Gemini"]="https://gemini.google.com"
     ["LeetCode"]="https://leetcode.com"
+    ["MonkeyType"]="https://monkeytype.com/"
 )
 
 choice=$(printf "%s\n" "${!sites[@]}" | sort | \
