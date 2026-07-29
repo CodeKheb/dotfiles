@@ -39,8 +39,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
-vim.keymap.set('n', '<leader>Z', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-vim.keymap.set('n', '<leader>z', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '<leader>Z', function() vim.diagnostic.jump({ count = -1, float = true }) end)
+vim.keymap.set('n', '<leader>z', function() vim.diagnostic.jump({ count = 1, float = true }) end)
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
