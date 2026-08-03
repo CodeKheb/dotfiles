@@ -35,8 +35,6 @@ if [[ -n "$project" ]]; then
         bash -c "nvim .; exec zsh"
 fi 
 ```
-## OpenRouter AI 
-    - Avante.nvim
 ## LuaSnip (Templates)
 Template load remap with Ctrl + V
 ```

@@ -80,43 +80,6 @@ require("lazy").setup({
 },
 
 {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    version = "*",
-    build = "make",
-
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MeanderingProgrammer/render-markdown.nvim",
-    },
-
-    opts = {
-        provider = "openai",
-
-        providers = {
-            openai = {
-                endpoint = "https://openrouter.ai/api/v1",
-                api_key_name = "OPENAI_API_KEY",
-                model = "tencent/hy3:free",
-                use_response_api = false,
-
-                disable_tools = true,
-
-                extra_request_body = {
-                    max_completion_tokens = 2048,
-                },
-            },
-            ollama = {
-                endpoint = "http://127.0.0.1:11434",
-                model = "qwen2.5-coder:1.5b",
-            }
-        },
-    },
-},
-
-{
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
 },
