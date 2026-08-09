@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-vim.keymap.set({"i","s"}, "<C-v>", function()
+vim.keymap.set({"i","s"}, "<C-Enter>", function()
   require("luasnip").expand_or_jump()
 end)
 
