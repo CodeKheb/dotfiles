@@ -1,7 +1,7 @@
 #
 # esp-idf
 alias esp="source ~/esp-idf/export.sh"
-alias sdkmanager="/home/me/Android/Sdk/cmdline-tools/bin/sdkmanager"
+alias sdkmanager="$HOME/Android/Sdk/cmdline-tools/bin/sdkmanager"
 
 alias cls="clear"
 
@@ -28,4 +28,4 @@ alias java17="sudo archlinux-java set java-17-openjdk"
 
 
 # ESPresso
-alias espresso="/home/me/projects/ESPresso/app/ESPresso/src-tauri/target/debug/espresso"
+alias espresso="$HOME/projects/ESPresso/app/ESPresso/src-tauri/target/debug/espresso"
