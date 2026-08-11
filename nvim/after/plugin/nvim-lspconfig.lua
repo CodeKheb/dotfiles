@@ -88,5 +88,25 @@ vim.lsp.enable('bashls')
 vim.lsp.enable('gopls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
+
+-- Java Ragebait
+vim.lsp.config('jdtls', {
+  settings = {
+    java = {
+      import = {
+        gradle = {
+          offline = {
+            enabled = true
+          }
+        },
+        maven = {
+          offline = {
+            enabled = true
+          }
+        }
+      }
+    }
+  }
+})
 vim.lsp.enable('jdtls')
 
