@@ -1,3 +1,4 @@
+vim.filetype.add({ extension = { gotmpl = "gotmpl" } })
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Action' })
@@ -33,12 +34,11 @@ vim.lsp.config('ts_ls', {
 })
 
 vim.lsp.config('gopls', {
+  cmd = { vim.fn.expand("$HOME/go/bin/gopls") },
   settings = {
     gopls = {
       gofumpt = true,
-      analyses = {
-        unusedparams = true,
-      },
+      analyses = { unusedparams = true },
     },
   },
 })

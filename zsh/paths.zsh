@@ -11,6 +11,7 @@ export PATH="$HOME/projects/dotfiles/rofi:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 
 # go
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH="$PATH:/usr/local/go/bin"
+export PATH=$PATH:$HOME/go/bin
 
 
