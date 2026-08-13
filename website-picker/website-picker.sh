@@ -20,6 +20,28 @@ declare -A sites=(
     ["LocalHost"]="localhost"
 )
 
+urlencode() {
+    local str="$1"
+    local len=${#str}
+    local encoded=""
+    local c
+
+    for (( i=0; i<len; i++ )); do
+        c="${str:i:1}"
+
+        case "$c" in
+            [a-zA-Z0-9.~_-])
+                encoded+="$c"
+                ;;
+            *)
+                printf -v encoded '%s%%%02X' "$encoded" "'$c"
+                ;;
+        esac
+    done
+
+    printf '%s\n' "$encoded"
+}
+
 choice=$(printf "%s\n" "${!sites[@]}" | sort | \
     rofi -dmenu -i \
     -p "Search" \
@@ -38,5 +60,7 @@ elif [[ -n "${sites[$choice]}" ]]; then
     firefox "${sites[$choice]}"
 
 else
-    firefox "https://www.google.com/search?q=${choice// /+}"
+    encoded_choice=$(urlencode "$choice")
+    firefox "https://www.google.com/search?q=${encoded_choice}"
 fi
+
