@@ -17,6 +17,7 @@ declare -A sites=(
     ["Render"]="https://dashboard.render.com"
     ["CodeChum"]="https://codechum.com"
     ["MonkeyType"]="https://monkeytype.com/"
+    ["LocalHost"]="localhost"
 )
 
 choice=$(printf "%s\n" "${!sites[@]}" | sort | \
@@ -24,10 +25,18 @@ choice=$(printf "%s\n" "${!sites[@]}" | sort | \
     -p "Search" \
     -theme ~/projects/dotfiles/website-picker/website-picker.rasi "Open")
 
-[ -z "$choice"] && exit
+[ -z "$choice" ] && exit
 
-if [[ -n "${sites[$choice]}" ]]; then
+if [[ "$choice" == "LocalHost" ]]; then
+    port=$(rofi -dmenu -p "Enter Port Number:" -theme ~/projects/dotfiles/website-picker/localhost.rasi)
+    
+    [ -z "$port" ] && exit
+    
+    firefox "http://localhost:$port"
+
+elif [[ -n "${sites[$choice]}" ]]; then
     firefox "${sites[$choice]}"
+
 else
     firefox "https://www.google.com/search?q=${choice// /+}"
 fi
