@@ -10,3 +10,6 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
   npm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm "$@"; }
   npx() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx "$@"; }
 fi
+
+# load autopair-init
+autopair-init
