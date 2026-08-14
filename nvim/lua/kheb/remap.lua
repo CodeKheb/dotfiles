@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
 vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 
 -- Open Terminal
-vim.keymap.set("n", "<leader>t", "<cmd>vertical botright term<CR>")
+vim.keymap.set("n", "<leader>t", "<cmd>botright term<CR>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
