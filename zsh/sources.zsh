@@ -13,3 +13,8 @@ fi
 
 # load autopair-init
 autopair-init
+
+# load fastfetch if not neovim
+if [ -z "$NVIM" ]; then
+    fastfetch
+fi
