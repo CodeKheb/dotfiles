@@ -29,6 +29,15 @@ vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 vim.keymap.set("n", "<leader>t", "<cmd>botright term<CR>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
+-- Close Terminal with <C-d> or exit
+vim.api.nvim_create_autocmd("TermClose", {
+  callback = function(args)
+    if vim.api.nvim_buf_is_valid(args.buf) then
+      vim.api.nvim_buf_delete(args.buf, {})
+    end
+  end,
+})
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
