@@ -57,6 +57,9 @@ if [[ "$choice" == "LocalHost" ]]; then
     
     firefox "http://localhost:$port"
 
+elif [[ "$choice" == "CodeChum" ]]; then
+    google-chrome-stable "${sites[$choice]}"
+
 elif [[ -n "${sites[$choice]}" ]]; then
     firefox "${sites[$choice]}"
 
