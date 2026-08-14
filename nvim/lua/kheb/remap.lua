@@ -38,6 +38,14 @@ vim.api.nvim_create_autocmd("TermClose", {
   end,
 })
 
+--  Terminal Auto insert mode
+vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
+  pattern = "term://*",
+  callback = function()
+    vim.cmd("startinsert")
+  end,
+})
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
