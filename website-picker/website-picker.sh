@@ -14,6 +14,7 @@ declare -A sites=(
     ["ChatGPT"]="https://chatgpt.com"
     ["Gemini"]="https://gemini.google.com"
     ["LeetCode"]="https://leetcode.com"
+    ["Linkedin"]="https://linkedin.com"
     ["Render"]="https://dashboard.render.com"
     ["CodeChum"]="https://codechum.com"
     ["MonkeyType"]="https://monkeytype.com/"
