@@ -18,7 +18,7 @@ declare -A sites=(
     ["Render"]="https://dashboard.render.com"
     ["CodeChum"]="https://codechum.com"
     ["MonkeyType"]="https://monkeytype.com/"
-    ["LocalHost"]="localhost"
+    ["LocalHost"]="http://localhost"
 )
 
 urlencode() {
@@ -55,7 +55,7 @@ if [[ "$choice" == "LocalHost" ]]; then
     
     [ -z "$port" ] && exit
     
-    firefox "http://localhost:$port"
+    firefox "${sites[$choice]}:$port"
 
 elif [[ "$choice" == "CodeChum" ]]; then
     google-chrome-stable "${sites[$choice]}"
