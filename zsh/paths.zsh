@@ -14,4 +14,5 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH=$PATH:$HOME/go/bin
 
-
+# dotnet 
+export PATH="$PATH:$HOME/.dotnet/tools"
