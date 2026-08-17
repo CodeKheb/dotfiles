@@ -72,6 +72,11 @@ vim.lsp.config('rust_analyzer', {
     root_markers = { 'Cargo.toml', '.git'},
 })
 
+vim.lsp.config('roslyn', {
+  cmd = { vim.fn.expand("$HOME") .. "/.dotnet/tools/roslyn-language-server", "--stdio", "--autoLoadProjects" },
+  filetypes = { "cs" },
+  root_markers = { "*.sln", "*.csproj", ".git" }
+})
 
 
 vim.lsp.enable('rust_analyzer')
@@ -88,6 +93,8 @@ vim.lsp.enable('bashls')
 vim.lsp.enable('gopls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
+vim.lsp.enable('roslyn')
+
 
 -- Java Ragebait
 vim.lsp.config('jdtls', {
