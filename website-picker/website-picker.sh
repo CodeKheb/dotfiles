@@ -2,6 +2,7 @@
 
 declare -A sites=(
     ["Facebook"]="https://facebook.com"
+    ["Messenger"]="https://facebook.com/messages"
     ["GitHub"]="https://github.com/CodeKheb"
     ["Classroom"]="https://classroom.google.com"
     ["Drive"]="https://drive.google.com"
