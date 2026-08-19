@@ -1,4 +1,10 @@
 vim.filetype.add({ extension = { gotmpl = "gotmpl" } })
+vim.filetype.add({
+  extension = {
+    xaml = "xml",
+    axaml = "xml",
+  },
+})
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Action' })
