@@ -14,9 +14,9 @@ vim.keymap.set("n", "<leader>sl", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<leader>sj", "<cmd>split<CR>")
 vim.keymap.set("n", "<leader>sq", "<cmd>close<CR>")
 
-vim.keymap.set("n", "<A-k>",    "<cmd>resize +2<CR>")
-vim.keymap.set("n", "<A-j>",  "<cmd>resize -2<CR>")
-vim.keymap.set("n", "<A-l>",  "<cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<A-k>", "<cmd>resize +2<CR>")
+vim.keymap.set("n", "<A-j>", "<cmd>resize -2<CR>")
+vim.keymap.set("n", "<A-l>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<A-h>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<leader>se", "<C-w>=")
 
@@ -31,19 +31,19 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- Close Terminal with <C-d> or exit
 vim.api.nvim_create_autocmd("TermClose", {
-  callback = function(args)
-    if vim.api.nvim_buf_is_valid(args.buf) then
-      vim.api.nvim_buf_delete(args.buf, {})
-    end
-  end,
+    callback = function(args)
+        if vim.api.nvim_buf_is_valid(args.buf) then
+            vim.api.nvim_buf_delete(args.buf, {})
+        end
+    end,
 })
 
 --  Terminal Auto insert mode
-vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
-  pattern = "term://*",
-  callback = function()
-    vim.cmd("startinsert")
-  end,
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
+    pattern = "term://*",
+    callback = function()
+        vim.cmd("startinsert")
+    end,
 })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -70,8 +70,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-vim.keymap.set({"i","s"}, "<C-v>", function()
-  require("luasnip").expand_or_jump()
+vim.keymap.set({ "i", "s" }, "<C-v>", function()
+    require("luasnip").expand_or_jump()
 end)
-
-
