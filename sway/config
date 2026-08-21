@@ -58,8 +58,9 @@ bindsym $mod+Ctrl+h workspace prev
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 # poweroff
-bindsym $mod+Shift+Delete exec systemctl reboot 
+bindsym $mod+End exec systemctl reboot 
 bindsym $mod+Delete exec systemctl poweroff
+bindsym $mod+Home exec systemctl suspend
 
 # volume
 bindsym F2 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
