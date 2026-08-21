@@ -56,6 +56,7 @@ bindsym $mod+Ctrl+h workspace prev
 
 # screenshot
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d_%H%M%S).png
 
 # poweroff
 bindsym $mod+End exec systemctl reboot 
