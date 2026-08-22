@@ -8,6 +8,7 @@ declare -A sites=(
     ["Drive"]="https://drive.google.com"
     ["Docs"]="https://docs.google.com"
     ["Sheets"]="https://docs.google.com/spreadsheets"
+    ["Sprites"]="https://www.spriters-resource.com"
     ["Gmail"]="https://mail.google.com"
     ["YouTube"]="https://youtube.com"
     ["Music"]="https://music.youtube.com"
