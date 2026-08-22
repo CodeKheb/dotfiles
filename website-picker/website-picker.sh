@@ -15,6 +15,7 @@ declare -A sites=(
     ["Canva"]="https://canva.com"
     ["Claude"]="https://claude.ai"
     ["ChatGPT"]="https://chatgpt.com"
+    ["ZeroGPT"]="https://gptzero.me"
     ["Gemini"]="https://gemini.google.com"
     ["LeetCode"]="https://leetcode.com"
     ["Linkedin"]="https://linkedin.com"
