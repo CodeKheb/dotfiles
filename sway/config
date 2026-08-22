@@ -94,3 +94,7 @@ seat * hide_cursor 1000
 
 # monitor
 output HDMI-A-2 enable
+
+
+# disable tiling
+for_window [class=".*\..*"] floating enable
