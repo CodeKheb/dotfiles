@@ -10,6 +10,7 @@ declare -A sites=(
     ["Sheets"]="https://docs.google.com/spreadsheets"
     ["Gmail"]="https://mail.google.com"
     ["YouTube"]="https://youtube.com"
+    ["Music"]="https://music.youtube.com"
     ["Canva"]="https://canva.com"
     ["Claude"]="https://claude.ai"
     ["ChatGPT"]="https://chatgpt.com"
