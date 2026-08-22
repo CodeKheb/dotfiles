@@ -98,3 +98,4 @@ output HDMI-A-2 enable
 
 # disable tiling
 for_window [class=".*\..*"] floating enable
+for_window [app_id="one.alynx.showmethekey"] floating enable
