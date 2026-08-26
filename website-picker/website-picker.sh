@@ -1,6 +1,7 @@
 #!/bin/bash
 
 declare -A sites=(
+    ["New Tab"]=""
     ["Facebook"]="https://facebook.com"
     ["Messenger"]="https://facebook.com/messages"
     ["GitHub"]="https://github.com/CodeKheb"
@@ -54,7 +55,10 @@ choice=$(printf "%s\n" "${!sites[@]}" | sort | \
 
 [ -z "$choice" ] && exit
 
-if [[ "$choice" == "LocalHost" ]]; then
+if [[ "$choice" == "New Tab" ]]; then
+    firefox --new-tab about:blank
+
+elif [[ "$choice" == "LocalHost" ]]; then
     port=$(rofi -dmenu -p "Enter Port Number:" -theme ~/projects/dotfiles/website-picker/localhost.rasi)
     
     [ -z "$port" ] && exit
