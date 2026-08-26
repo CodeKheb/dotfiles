@@ -26,6 +26,32 @@ declare -A sites=(
     ["LocalHost"]="http://localhost"
 )
 
+site_order=(
+    "New Tab"
+    "Facebook"
+    "Messenger"
+    "GitHub"
+    "Classroom"
+    "Drive"
+    "Docs"
+    "Sheets"
+    "Sprites"
+    "Gmail"
+    "YouTube"
+    "Music"
+    "Canva"
+    "Claude"
+    "ChatGPT"
+    "ZeroGPT"
+    "Gemini"
+    "LeetCode"
+    "Linkedin"
+    "Render"
+    "CodeChum"
+    "MonkeyType"
+    "LocalHost"
+)
+
 urlencode() {
     local str="$1"
     local len=${#str}
@@ -48,7 +74,7 @@ urlencode() {
     printf '%s\n' "$encoded"
 }
 
-choice=$(printf "%s\n" "${!sites[@]}" | sort | \
+choice=$(printf "%s\n" "${site_order[@]}" | \
     rofi -dmenu -i \
     -p "Search" \
     -theme ~/projects/dotfiles/website-picker/website-picker.rasi "Open")
