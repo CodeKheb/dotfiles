@@ -18,7 +18,3 @@ autopair-init
 if [ -z "$NVIM" ]; then
     fastfetch
 fi
-
-if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
-    tmux new-session
-fi
