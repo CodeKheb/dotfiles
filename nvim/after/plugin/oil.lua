@@ -15,7 +15,12 @@ require("oil").setup({
         show_hidden = true,
     },
 
+    confirmation = {
+        prompt = false,
+    },
+
     skip_confirm_for_simple_edits = true,
+    prompt_save_on_select_new_entry = false,
 })
 
 vim.api.nvim_set_hl(0, "OilFile", {
