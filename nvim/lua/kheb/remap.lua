@@ -25,26 +25,33 @@ vim.keymap.set("n", "<leader>l", vim.cmd.BufferNext)
 vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
 vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
 
--- Open Terminal
-vim.keymap.set("n", "<leader>t", "<cmd>botright term<CR>")
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+-- Open terminal in oil or in file
+vim.keymap.set("n", "<leader>t", function()
+    local oil = require("oil")
+    local dir = oil.get_current_dir(0)
 
--- Close Terminal with <C-d> or exit
-vim.api.nvim_create_autocmd("TermClose", {
-    callback = function(args)
-        if vim.api.nvim_buf_is_valid(args.buf) then
-            vim.api.nvim_buf_delete(args.buf, {})
-        end
-    end,
-})
+    if not dir then
+        dir = vim.fn.expand("%:p:h")
+    end
 
---  Terminal Auto insert mode
-vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
-    pattern = "term://*",
-    callback = function()
-        vim.cmd("startinsert")
-    end,
-})
+    if dir == "" then
+        dir = vim.fn.getcwd()
+    end
+
+    vim.cmd("botright new")
+
+    vim.fn.termopen(vim.o.shell, {
+        cwd = dir,
+    })
+
+    vim.cmd("startinsert")
+end)
+
+-- Close Terminal
+vim.keymap.set("t", "<Esc><Esc>", function()
+    vim.cmd("stopinsert")
+    vim.cmd("close")
+end)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
