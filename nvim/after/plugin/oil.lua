@@ -6,7 +6,7 @@ require("oil").setup({
     },
 
     win_options = {
-        signcolumn = "yes",
+        signcolumn = "yes:2",
         number = true,
         numberwidth = 3,
     },
