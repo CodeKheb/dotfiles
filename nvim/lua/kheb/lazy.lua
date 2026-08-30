@@ -29,23 +29,37 @@ require("lazy").setup({
     'stevearc/dressing.nvim',
     "MunifTanjim/nui.nvim",
     { "rose-pine/neovim", name = "rose-pine" },
+
     {
         "stevearc/oil.nvim",
+        lazy = false,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
         opts = {
             default_file_explorer = true,
 
-            columns = {
-                "icon",
+            win_options = {
+                signcolumn = "yes:2",
             },
+
+            columns = {},
 
             view_options = {
                 show_hidden = true,
             },
         },
     },
+
+    {
+        "refractalize/oil-git-status.nvim",
+        lazy = false,
+        dependencies = {
+            "stevearc/oil.nvim",
+        },
+        opts = {},
+    },
+
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
