@@ -21,6 +21,7 @@ require("oil").setup({
 
     skip_confirm_for_simple_edits = true,
     prompt_save_on_select_new_entry = false,
+    delete_to_trash = true,
 })
 
 vim.api.nvim_set_hl(0, "OilFile", {
