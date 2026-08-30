@@ -15,11 +15,11 @@ require("oil").setup({
 })
 
 vim.api.nvim_set_hl(0, "OilFile", {
-    fg = "#e0def4",
+    fg = "#ffffff",
 })
 
 vim.api.nvim_set_hl(0, "OilDir", {
-    fg = "#c4a7e7",
+    link = "Comment",
 })
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", {
