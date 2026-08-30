@@ -27,12 +27,24 @@ require("lazy").setup({
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'stevearc/dressing.nvim',
-    'nvim-tree/nvim-web-devicons',
     "MunifTanjim/nui.nvim",
     { "rose-pine/neovim", name = "rose-pine" },
     {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" }
+        "stevearc/oil.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            default_file_explorer = true,
+
+            columns = {
+                "icon",
+            },
+
+            view_options = {
+                show_hidden = true,
+            },
+        },
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -64,27 +76,12 @@ require("lazy").setup({
             })
         end,
     },
-    {'romgrk/barbar.nvim',
-    dependencies = {
-        'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-        'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = { "rafamadriz/friendly-snippets" },
     },
-    init = function() vim.g.barbar_auto_setup = false end,
-    opts = {
-        -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-        -- animation = true,
-        -- insert_at_start = true,
-        -- …etc.
-    },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
-},
 
-{
-    "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
-},
-
-{
+    {
         "mfussenegger/nvim-dap",
         dependencies = {
             "rcarriga/nvim-dap-ui",
@@ -171,4 +168,3 @@ require("lazy").setup({
         },
     },
 })
-
