@@ -23,22 +23,6 @@ require("oil").setup({
     prompt_save_on_select_new_entry = false,
 })
 
-vim.keymap.set("n", "dd", function()
-    local oil = require("oil")
-    local row = vim.api.nvim_win_get_cursor(0)[1]
-    local entry = oil.get_entry_on_line(0, row)
-
-    if not entry then
-        return
-    end
-
-    vim.api.nvim_buf_set_lines(0, row - 1, row, false, {})
-    oil.save({ confirm = false })
-end, {
-    buffer = true,
-    desc = "Delete without confirmation",
-})
-
 vim.api.nvim_set_hl(0, "OilFile", {
     fg = "#ffffff",
 })
