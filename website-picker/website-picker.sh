@@ -24,6 +24,7 @@ declare -A sites=(
     ["CodeChum"]="https://codechum.com"
     ["MonkeyType"]="https://monkeytype.com/"
     ["LocalHost"]="http://localhost"
+    ["Vercel"]="https://vercel.com"
 )
 
 site_order=(
@@ -47,6 +48,7 @@ site_order=(
     "LeetCode"
     "Linkedin"
     "Render"
+    "Vercel"
     "CodeChum"
     "MonkeyType"
     "LocalHost"
