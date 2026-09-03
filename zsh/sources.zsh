@@ -11,5 +11,8 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
   npx() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx "$@"; }
 fi
 
-# load autopair-init
+# load completion and autopair
+autoload -Uz compinit
+autoload -Uz autopair-init
+compinit
 autopair-init
