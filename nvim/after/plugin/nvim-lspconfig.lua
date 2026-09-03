@@ -77,9 +77,21 @@ vim.lsp.config('jdtls', {
   }
 })
 
+-- yaml, the whole world runs on it
+vim.lsp.config('yamlls', {
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml",
+      },
+      validate = true,
+    },
+  },
+})
+
 -- servers
 local servers = {
-  'clangd', 'rust_analyzer', 'kotlin_language_server', 'yaml-language-server',
+  'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
   'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls', 
   'lua_ls', 'pyright', 'roslyn', 'jdtls'
 }
