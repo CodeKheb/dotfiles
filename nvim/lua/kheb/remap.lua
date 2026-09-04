@@ -20,11 +20,6 @@ vim.keymap.set("n", "<A-l>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<A-h>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<leader>se", "<C-w>=")
 
--- Buffers
-vim.keymap.set("n", "<leader>l", vim.cmd.BufferNext)
-vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
-vim.keymap.set("n", "<leader>q", vim.cmd.BufferClose)
-
 -- Open terminal in oil or in file
 vim.keymap.set("n", "<leader>t", function()
     local oil = require("oil")
