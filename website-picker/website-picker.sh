@@ -25,6 +25,7 @@ declare -A sites=(
     ["MonkeyType"]="https://monkeytype.com/"
     ["LocalHost"]="http://localhost"
     ["Vercel"]="https://vercel.com"
+    ["Stitch"]="https://stitch.withgoogle.com/"
 )
 
 site_order=(
@@ -52,6 +53,7 @@ site_order=(
     "CodeChum"
     "MonkeyType"
     "LocalHost"
+    "Stitch"
 )
 
 urlencode() {
