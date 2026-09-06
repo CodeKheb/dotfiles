@@ -1,4 +1,4 @@
-@import "~/projects/dotfiles/rofi/launchers/type-6/style-7.rasi"
+@import "base.rasi"
 
 window {
     width: 800px;

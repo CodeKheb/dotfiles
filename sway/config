@@ -11,8 +11,8 @@ bindsym $mod+v exec ~/projects/dotfiles/rofi/projects.sh
 bindsym $mod+Return exec kitty
 bindsym $mod+i exec kitty nmtui
 bindsym $mod+m exec kitty btop
-bindsym $mod+e exec kitty yazi 
-bindsym $mod+Space exec rofi -show drun -theme ~/projects/dotfiles/rofi/launchers/type-6/style-7.rasi
+bindsym $mod+e exec ~/projects/dotfiles/rofi/emoji.sh
+bindsym $mod+Space exec rofi -show drun -theme ~/projects/dotfiles/rofi/project-picker.rasi
 
 # web browser
 bindsym $mod+b exec ~/projects/dotfiles/website-picker/website-picker.sh 
