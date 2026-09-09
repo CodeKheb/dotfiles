@@ -27,35 +27,7 @@ declare -A sites=(
     ["Vercel"]="https://vercel.com"
     ["Stitch"]="https://stitch.withgoogle.com/"
     ["AI Studio"]="https://aistudio.google.com/"
-)
-
-site_order=(
-    "New Tab"
-    "Facebook"
-    "Messenger"
-    "GitHub"
-    "Classroom"
-    "Drive"
-    "Docs"
-    "Sheets"
-    "Sprites"
-    "Gmail"
-    "YouTube"
-    "Music"
-    "Canva"
-    "Claude"
-    "ChatGPT"
-    "ZeroGPT"
-    "Gemini"
-    "LeetCode"
-    "Linkedin"
-    "Render"
-    "Vercel"
-    "CodeChum"
-    "MonkeyType"
-    "LocalHost"
-    "Stitch"
-    "AI Studio"
+    ["CS50x"]="https://cs50.harvard.edu/x"
 )
 
 urlencode() {
@@ -80,7 +52,7 @@ urlencode() {
     printf '%s\n' "$encoded"
 }
 
-choice=$(printf "%s\n" "${site_order[@]}" | \
+choice=$(printf "%s\n" "${!sites[@]}" | \
     rofi -dmenu -i \
     -p "Search" \
     -theme ~/projects/dotfiles/website-picker/website-picker.rasi "Open")
@@ -97,7 +69,7 @@ elif [[ "$choice" == "LocalHost" ]]; then
     
     firefox "${sites[$choice]}:$port"
 
-elif [[ "$choice" == "CodeChum" ]]; then
+elif [[ "$choice" == "CodeChum" || "$choice" == "CS50x" ]]; then
     google-chrome-stable "${sites[$choice]}"
 
 elif [[ -n "${sites[$choice]}" ]]; then
