@@ -101,4 +101,5 @@ output HDMI-A-2 enable
 for_window [class=".*\..*"] floating enable
 for_window [app_id="one.alynx.showmethekey"] floating enable
 for_window [title="^ImageMagick:"] floating enable
+for_window [class="ffplay"] floating enable
 for_window [class="feh"] floating enable, move position center, resize set 800 600
