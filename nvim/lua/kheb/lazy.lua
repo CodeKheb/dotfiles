@@ -23,7 +23,6 @@ require("lazy").setup({
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
     'brianhuster/live-preview.nvim',
-    'theprimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'stevearc/dressing.nvim',

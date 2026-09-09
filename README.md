@@ -81,7 +81,6 @@ nvim/
 - **Autocompletion** — nvim-cmp (LSP, buffer, path sources) with **LuaSnip** snippets + friendly-snippets
 - **Treesitter** — parsers for templ, html, css, javascript, lua, go, java, python, rust
 - **Debugging** — nvim-dap with `codelldb` (C/C++/Rust) and python, auto-opening dap-ui
-- **Telescope** finder, **Harpoon** quick navigation, **undotree**, **fugitive** (Git), **oil.nvim** file explorer with git status
 - **Live preview** for web dev (`live-preview.nvim`)
 - **Rose-pine** color scheme with transparent background
 - Compile & run with `compiler.nvim` + `overseer.nvim` (e.g. `gcc` via `makeprg`)
@@ -233,7 +232,6 @@ Install language servers and debuggers with:
 | LuaSnip, friendly-snippets | Snippets |
 | nvim-treesitter, nvim-ts-autotag | Syntax highlighting & auto-tags |
 | telescope.nvim, plenary.nvim | Fuzzy finding |
-| harpoon | Quick file switching |
 | undotree | Persistent undo history |
 | vim-fugitive | Git integration |
 | oil.nvim, oil-git-status.nvim | File explorer with git status |
