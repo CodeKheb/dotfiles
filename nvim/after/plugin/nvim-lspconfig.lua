@@ -89,11 +89,23 @@ vim.lsp.config('yamlls', {
   },
 })
 
+-- terraform 
+vim.lsp.config("terraformls", {
+    cmd = { "terraform-ls", "serve" },
+    filetypes = { "tf" },
+    root_markers = { ".git" },
+    settings = {
+        terraformls = {
+            ignoreSingleFileWarning = true,
+        },
+    },
+})
+
 -- servers
 local servers = {
   'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
-  'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls', 
-  'lua_ls', 'pyright', 'roslyn', 'jdtls'
+  'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls',
+  'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls'
 }
 
 for _, server in ipairs(servers) do
