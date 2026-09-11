@@ -1,7 +1,6 @@
 #!/bin/bash
 
 declare -A sites=(
-    ["New Tab"]=""
     ["Facebook"]="https://facebook.com"
     ["Messenger"]="https://facebook.com/messages"
     ["GitHub"]="https://github.com/CodeKheb"
@@ -52,8 +51,11 @@ urlencode() {
     printf '%s\n' "$encoded"
 }
 
-choice=$(printf "%s\n" "${!sites[@]}" | \
-    rofi -dmenu -i \
+choice=$(
+    {
+        echo "New Tab"
+        printf "%s\n" "${!sites[@]}" 
+    } | rofi -dmenu -i \
     -p "Search" \
     -theme ~/projects/dotfiles/website-picker/website-picker.rasi "Open")
 
