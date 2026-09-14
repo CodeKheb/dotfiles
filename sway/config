@@ -58,6 +58,7 @@ bindsym $mod+Ctrl+h workspace prev
 # screenshot
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+bindsym $mod+Shift+Print exec wlgif --fps 30
 
 # poweroff
 bindsym $mod+End exec systemctl reboot 
@@ -98,7 +99,7 @@ output HDMI-A-2 enable
 
 
 # disable tiling
-for_window [class=".*\..*"] floating enable
+for_window [class=".*\..*"] floating enable, border normal
 for_window [app_id="one.alynx.showmethekey"] floating enable
 for_window [title="^ImageMagick:"] floating enable
 for_window [class="ffplay"] floating enable
