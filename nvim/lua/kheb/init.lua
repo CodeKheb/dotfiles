@@ -1,13 +1,3 @@
-vim.filetype.add({
-  extension = {
-    templ = "templ",
-    js = "javascript",
-    ts = "typescript",
-    jsx = "javascriptreact",
-    tsx = "typescriptreact",
-  },
-})
-
 require("kheb.remap")
 require("kheb.lazy")
 vim.opt.makeprg = "gcc -g % -o %<"

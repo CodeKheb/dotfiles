@@ -1,95 +1,102 @@
 vim.filetype.add({ extension = { gotmpl = "gotmpl" } })
 vim.filetype.add({
-  extension = {
-    xaml = "xml",
-    axaml = "xml",
-  },
+    extension = {
+        xaml = "xml",
+        axaml = "xml",
+        templ = "templ",
+        js = "javascript",
+        ts = "typescript",
+        jsx = "javascriptreact",
+        tsx = "typescriptreact",
+
+    },
 })
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Action' })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
-  end,
+    pattern = "*.go",
+    callback = function()
+        vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+    end,
 })
 
 -- global lsp
 vim.lsp.config('*', {
-  capabilities = capabilities,
-  root_markers = { '.git' },
+    capabilities = capabilities,
+    root_markers = { '.git' },
 })
 
 -- golang
 vim.lsp.config('gopls', {
-  cmd = { vim.fn.expand("$HOME/go/bin/gopls") },
-  settings = {
-    gopls = {
-      gofumpt = true,
-      analyses = { unusedparams = true },
+    cmd = { vim.fn.expand("$HOME/go/bin/gopls") },
+    settings = {
+        gopls = {
+            gofumpt = true,
+            analyses = { unusedparams = true },
+        },
     },
-  },
 })
 
 -- tailwind
 vim.lsp.config('tailwindcss', {
-  filetypes = { 'html', 'css', 'templ', 'javascript', 'typescript' },
-  settings = {
-    tailwindCSS = {
-      includeLanguages = { templ = "html" },
+    filetypes = { 'html', 'css', 'templ', 'javascript', 'typescript' },
+    settings = {
+        tailwindCSS = {
+            includeLanguages = { templ = "html" },
+        },
     },
-  },
 })
 
 -- typescript
 vim.lsp.config('ts_ls', {
-  filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'templ' },
+    filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'templ' },
 })
 
 -- c#
 vim.lsp.config('roslyn', {
-  cmd = { vim.fn.expand("$HOME") .. "/.dotnet/tools/roslyn-language-server", "--stdio", "--autoLoadProjects" },
-  filetypes = { "cs" },
-  root_markers = { "*.sln", "*.csproj", ".git" }
+    cmd = { vim.fn.expand("$HOME") .. "/.dotnet/tools/roslyn-language-server", "--stdio", "--autoLoadProjects" },
+    filetypes = { "cs" },
+    root_markers = { "*.sln", "*.csproj", ".git" }
 })
 
 -- kotlin
 vim.lsp.config('kotlin_language_server', {
-  root_markers = { 'gradlew', 'build.gradle', 'build.gradle.kts', 'settings.gradle.kts' },
+    root_markers = { 'gradlew', 'build.gradle', 'build.gradle.kts', 'settings.gradle.kts' },
 })
 
--- rust 
+-- rust
 vim.lsp.config('rust_analyzer', {
-  root_markers = { 'Cargo.toml', '.git' },
+    root_markers = { 'Cargo.toml', '.git' },
 })
 
 -- java ragebait larp
 vim.lsp.config('jdtls', {
-  settings = {
-    java = {
-      import = {
-        gradle = { offline = { enabled = true } },
-        maven = { offline = { enabled = true } }
-      }
+    settings = {
+        java = {
+            import = {
+                gradle = { offline = { enabled = true } },
+                maven = { offline = { enabled = true } }
+            }
+        }
     }
-  }
 })
 
 -- yaml, the whole world runs on it
 vim.lsp.config('yamlls', {
-  settings = {
-    yaml = {
-      schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml",
-      },
-      validate = true,
+    settings = {
+        yaml = {
+            schemas = {
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml",
+            },
+            validate = true,
+        },
     },
-  },
 })
 
--- terraform 
+-- terraform
 vim.lsp.config("terraformls", {
     cmd = { "terraform-ls", "serve" },
     filetypes = { "tf" },
@@ -103,12 +110,11 @@ vim.lsp.config("terraformls", {
 
 -- servers
 local servers = {
-  'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
-  'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls',
-  'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls'
+    'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
+    'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls',
+    'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls'
 }
 
 for _, server in ipairs(servers) do
-  vim.lsp.enable(server)
+    vim.lsp.enable(server)
 end
-
