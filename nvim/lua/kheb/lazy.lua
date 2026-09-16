@@ -107,6 +107,13 @@ require("lazy").setup({
     },
 
     {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = {
+        "williamboman/mason.nvim", },
+    },
+
+
+    {
         "mfussenegger/nvim-dap",
         dependencies = {
             "rcarriga/nvim-dap-ui",
