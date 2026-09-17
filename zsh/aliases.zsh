@@ -18,6 +18,11 @@ alias reload-sway="swaymsg reload"
 alias reload-zsh="source ~/.zshrc"
 
 
+alias arduino="/opt/arduino/arduino-ide > /dev/null 2>&1 &"
+alias arduino-8266-compile="arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 -u -p /dev/ttyUSB0"
+alias arudino-8266-monitor="arduino-cli monitor -p /dev/ttyUSB0 -b esp8266:esp8266:nodemcuv2"
+
+
 # nvim
 alias vim="nvim ."
 
