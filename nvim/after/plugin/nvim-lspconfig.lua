@@ -108,6 +108,12 @@ vim.lsp.config("terraformls", {
     },
 })
 
+-- clangd
+vim.lsp.config("clangd", {
+    filetypes = { "cpp" },
+    root_markers = { ".git" },
+})
+
 -- servers
 local servers = {
     'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
