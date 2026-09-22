@@ -1,5 +1,7 @@
 require("kheb.remap")
 require("kheb.lazy")
+
+vim.env.PATH = vim.fn.expand("$HOME/.local/bin") .. ":" .. vim.env.PATH
 vim.opt.makeprg = "gcc -g % -o %<"
 
 print("PLEASE WORK")
