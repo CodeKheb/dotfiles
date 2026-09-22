@@ -204,6 +204,20 @@ require("lazy").setup({
         dependencies = {
             "folke/snacks.nvim",
         },
+        opts = {
+            terminal = {
+                provider = "snacks",
+
+                snacks_win_opts = {
+                    position = "bottom",
+                    height = 0.50,
+                    width = 1.0,
+                    border = "single",
+                },
+
+                auto_close = true,
+            },
+        },
         config = true,
     },
 })
