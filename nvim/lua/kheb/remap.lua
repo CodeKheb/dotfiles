@@ -20,7 +20,7 @@ vim.keymap.set("n", "<A-l>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<A-h>", "<cmd>vertical resize +2<CR>")
 vim.keymap.set("n", "<leader>se", "<C-w>=")
 
-vim.keymap.set("n", "<leader>aa", "<cmd>%y+<CR>")
+vim.keymap.set("n", "<leader>vv", "<cmd>%y+<CR>")
 
 -- Open terminal in oil or in file
 vim.keymap.set("n", "<leader>t", function()
@@ -77,3 +77,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.set({ "i", "s" }, "<C-v>", function()
     require("luasnip").expand_or_jump()
 end)
+
+-- Claude
+vim.keymap.set("n", "<leader>ac", "<CMD>ClaudeCode<CR>")
+vim.keymap.set("n", "<leader>af", "<CMD>ClaudeCodeFocus<CR>")
+vim.keymap.set("n", "<leader>ar", "<CMD>ClaudeCode --resume<CR>")
+vim.keymap.set("n", "<leader>aC", "<CMD>ClaudeCode --continue<CR>")
+vim.keymap.set("n", "<leader>am", "<CMD>ClaudeCodeSelectModel<CR>")
+vim.keymap.set("n", "<leader>ab", "<CMD>ClaudeCodeAdd %<CR>")
+vim.keymap.set("v", "<leader>as", "<CMD>ClaudeCodeSend<CR>")
+vim.keymap.set("n", "<leader>aa", "<CMD>ClaudeCodeDiffAccept<CR>")
+vim.keymap.set("n", "<leader>ad", "<CMD>ClaudeCodeDiffDeny<CR>")
+
