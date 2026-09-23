@@ -16,3 +16,6 @@ autoload -Uz compinit
 autoload -Uz autopair-init
 compinit
 autopair-init
+
+# editor
+export EDITOR=nvim
