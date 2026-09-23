@@ -1,4 +1,3 @@
-vim.filetype.add({ extension = { gotmpl = "gotmpl" } })
 vim.filetype.add({
     extension = {
         xaml = "xml",
@@ -8,7 +7,7 @@ vim.filetype.add({
         ts = "typescript",
         jsx = "javascriptreact",
         tsx = "typescriptreact",
-
+        gotml = "gotmpl",
     },
 })
 
@@ -114,11 +113,18 @@ vim.lsp.config("clangd", {
     root_markers = { ".git" },
 })
 
+-- docker
+vim.lsp.config("docker-language-server", {
+    cmd = { "docker-language-server", "start", "--stdio" },
+    filetypes = { "dockerfile", "yaml.docker-compose" },
+    root_markers = { ".git", "Dockerfile", "docker-compose.yml" },
+})
+
 -- servers
 local servers = {
     'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
     'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls',
-    'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls'
+    'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls', 'docker-language-server'
 }
 
 for _, server in ipairs(servers) do

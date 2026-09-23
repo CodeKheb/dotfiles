@@ -17,5 +17,6 @@ require("mason-tool-installer").setup({
         "pyright",
         "roslyn-language-server",
         "terraform-ls",
+        "docker-language-server",
     },
 })
