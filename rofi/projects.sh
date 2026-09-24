@@ -22,8 +22,8 @@ if [[ "$selection" == "New Project" ]]; then
     mkdir -p "$PROJECTS_DIR/$project_name"
 
     kitty --working-directory "$PROJECTS_DIR/$project_name" \
-        bash -c "nvim .; exec zsh"
+        zsh -lic "nvim .; exec zsh"
 else
     kitty --working-directory "$PROJECTS_DIR/$selection" \
-        bash -c "nvim .; exec zsh"
+        zsh -lic "nvim .; exec zsh"
 fi

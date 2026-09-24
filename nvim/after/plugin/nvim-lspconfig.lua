@@ -120,11 +120,22 @@ vim.lsp.config("docker-language-server", {
     root_markers = { ".git", "Dockerfile", "docker-compose.yml" },
 })
 
+-- dart
+vim.lsp.config("dartls", {
+    cmd = { "dart", "language-server", "--protocol=lsp"},
+    filetypes = { "dart"},
+    root_markers = {
+        "pubspec.yaml",
+        ".git",
+    }
+})
+
 -- servers
 local servers = {
     'clangd', 'rust_analyzer', 'kotlin_language_server', 'yamlls',
     'tailwindcss', 'templ', 'html', 'cssls', 'ts_ls', 'bashls', 'gopls',
-    'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls', 'docker-language-server'
+    'lua_ls', 'pyright', 'roslyn', 'jdtls', 'terraformls', 'docker-language-server',
+    'dartls',
 }
 
 for _, server in ipairs(servers) do
