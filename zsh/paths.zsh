@@ -12,5 +12,8 @@ export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
 # android
 export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
 
+# flutter
+export PATH="$HOME/development/flutter/bin:$PATH"
+
 # dotnet
 export PATH="$HOME/.dotnet/tools:$PATH"
