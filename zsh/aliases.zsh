@@ -1,7 +1,5 @@
-#
 # esp-idf
 alias esp="source ~/esp-idf/export.sh"
-alias sdkmanager="$HOME/Android/Sdk/cmdline-tools/bin/sdkmanager"
 
 alias cls="clear"
 
