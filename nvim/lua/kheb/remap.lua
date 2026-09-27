@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader><Esc>", vim.cmd.qa)
 vim.keymap.set("n", "<leader>fq", "<cmd>q!<CR>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>so", vim.cmd.so)
+vim.keymap.set("n", "<leader>b", "<cmd>b#<CR>")
 
 -- Splits
 vim.keymap.set("n", "<C-h>", "<C-w>h")
