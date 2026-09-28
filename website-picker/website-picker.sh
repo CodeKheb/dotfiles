@@ -27,6 +27,7 @@ declare -A sites=(
     ["Stitch"]="https://stitch.withgoogle.com/"
     ["AI Studio"]="https://aistudio.google.com/"
     ["CS50x"]="https://cs50.harvard.edu/x"
+    ["GMetrix"]="https://gmetrix.net/"
 )
 
 urlencode() {
