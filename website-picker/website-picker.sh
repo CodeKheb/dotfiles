@@ -28,7 +28,7 @@ declare -A sites=(
     ["AI Studio"]="https://aistudio.google.com/"
     ["CS50x"]="https://cs50.harvard.edu/x"
     ["GMetrix"]="https://gmetrix.net/"
-    ["Certiport"]="https://certiport.com/Portal/"
+    ["Certiport"]="https://certiport.pearsonvue.com/"
 )
 
 urlencode() {
