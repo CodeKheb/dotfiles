@@ -109,7 +109,7 @@ vim.lsp.config("terraformls", {
 
 -- clangd
 vim.lsp.config("clangd", {
-    filetypes = { "cpp" },
+    filetypes = { "cpp", "c" },
     root_markers = { ".git" },
 })
 
