@@ -29,6 +29,7 @@ declare -A sites=(
     ["CS50x"]="https://cs50.harvard.edu/x"
     ["GMetrix"]="https://gmetrix.net/"
     ["Certiport"]="https://certiport.pearsonvue.com/"
+    ["Cloudflare"]="https://dash.cloudflare.com/"
 )
 
 urlencode() {
