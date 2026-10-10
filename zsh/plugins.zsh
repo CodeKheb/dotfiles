@@ -6,3 +6,6 @@ plugins=(
 
 # vim in the terminal
 bindkey -v
+
+# fzf
+source <(fzf --zsh)
