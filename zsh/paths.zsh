@@ -19,3 +19,6 @@ export CHROME_EXECUTABLE="/usr/bin/chromium"
 
 # dotnet
 export PATH="$HOME/.dotnet/tools:$PATH"
+
+# rust cargo
+export PATH="$HOME/.cargo/bin:$PATH"
