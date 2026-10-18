@@ -30,6 +30,7 @@ declare -A sites=(
     ["GMetrix"]="https://gmetrix.net/"
     ["Certiport"]="https://certiport.pearsonvue.com/"
     ["Cloudflare"]="https://dash.cloudflare.com/"
+    ["Instagram"]="https://www.instagram.com"
 )
 
 urlencode() {
