@@ -6,8 +6,7 @@
     "spacing": 6,
 
     "modules-left": [
-        "custom/logo",
-        "sway/window"
+        "custom/logo"
     ],
 
     "modules-center": [
