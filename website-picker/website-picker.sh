@@ -33,6 +33,7 @@ declare -A sites=(
     ["Certiport"]="https://certiport.pearsonvue.com/"
     ["Cloudflare"]="https://dash.cloudflare.com/"
     ["Instagram"]="https://www.instagram.com"
+    ["Figma"]="https://www.figma.com"
 )
 
 urlencode() {
