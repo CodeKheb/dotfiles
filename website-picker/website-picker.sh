@@ -5,6 +5,7 @@ declare -A sites=(
     ["Messenger"]="https://facebook.com/messages"
     ["GitHub"]="https://github.com/CodeKheb"
     ["Classroom"]="https://classroom.google.com/u/1/h/st"
+    ["BPSU Online Enrollment"]="https://onlineenrollment.bpsu.edu.ph/"
     ["Drive"]="https://drive.google.com/drive/u/1/"
     ["Docs"]="https://docs.google.com"
     ["Sheets"]="https://docs.google.com/spreadsheets"
