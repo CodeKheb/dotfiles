@@ -100,6 +100,7 @@ output HDMI-A-2 enable
 
 # disable tiling
 for_window [class=".*\..*"] floating enable, border normal
+for_window [class="^sun-awt-X11-"] floating enable
 for_window [app_id="one.alynx.showmethekey"] floating enable
 for_window [title="^ImageMagick:"] floating enable
 for_window [class="ffplay"] floating enable

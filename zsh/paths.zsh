@@ -23,3 +23,6 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 
 # rust cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# java awt 
+export _JAVA_AWT_WM_NONREPARENTING=1
